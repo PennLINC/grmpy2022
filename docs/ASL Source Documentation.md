@@ -17,7 +17,7 @@ The original .dat files could not be uploaded to Flywheel, but they can be found
 <a href="https://github.com/PennLINC/bpd/blob/master/referenceFiles/grmpy_asl_reconlist.csv">This</a> list of subjects had their ASL and M0 derived from .dat files:
 
 ## Group 2 (PROBLEMATIC)
-<a href="https://github.com/PennLINC/bpd/blob/master/referenceFiles/grmpy_asl_group2.csv">This list</a> of subjects’ ASL sequences have associated dicoms. This group has several names within each acquisiton that do not distinguish between images. These sequences were uploaded to Flywheel from several sources including XNAT and Stellar Chance 3T.
+<a href="https://github.com/PennLINC/bpd/blob/master/referenceFiles/grmpy_asl_group2.csv">This</a> list of subjects’ ASL sequences have associated dicoms. This group has several names within each acquisiton that do not distinguish between images. These sequences were uploaded to Flywheel from several sources including XNAT and Stellar Chance 3T.
 
 In order to differentiate between ASL, M0, and Mean Perfusion, refer to BIDS view in the GUI, or BIDS Info via the SDK. <a href="https://github.com/PennLINC/bpd/blob/master/referenceFiles/multiple_m0.csv">This</a> subset also has two M0 images per acquisiton. However, one M0 is nominal, and another is low quality. As of 6/2/20, the only way of determining which M0 to use is by sight. Some M0s do not have proper associated metadata.
 
