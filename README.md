@@ -1,4 +1,4 @@
-# Grmpy
+# GRMPY/ BPD Project
 
 ## About the theme
 This is a fork of just-the-docs.
