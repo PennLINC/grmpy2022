@@ -3,9 +3,9 @@ layout: default
 title: ASL Source Documentation
 has_children: false
 has_toc: false
-nav_order: 3
+nav_order: 4
 ---
-
+# ASL Source Documentation
 The ASL sequences in GRMPY were acquired in distinct ways throughout data collection. Resultantly, the ASL acquisitions in GRMPY can be divided into 2 groups based on their origin, and method of acquisition.
 
 ## Group 1
@@ -13,12 +13,12 @@ While the majority of ASL sequences in GRMPY were acquired as dicoms and convert
 
 The original .dat files could not be uploaded to Flywheel, but they can be found in the following CUBIC directory: /cbica/projects/diego_networks/ASL_recon_backup/DAT
 
-[This] (https://github.com/PennLINC/grmpy/blob/gh-pages/referenceFiles/grmpy_asl_group2.csv) list of subjects had their ASL and M0 derived from .dat files:
+[This] (https://github.com/PennLINC/bpd/blob/gh-pages/referenceFiles/grmpy_asl_group2.csv) list of subjects had their ASL and M0 derived from .dat files:
 
 ## Group 2 (PROBLEMATIC)
-[This list] (https://github.com/PennLINC/grmpy/blob/gh-pages/referenceFiles/grmpy_asl_group2.csv) of subjects’ ASL sequences have associated dicoms. This group has several names within each acquisiton that do not distinguish between images. These sequences were uploaded to Flywheel from several sources including XNAT and Stellar Chance 3T.
+[This list] (https://github.com/PennLINC/bpd/blob/gh-pages/referenceFiles/grmpy_asl_group2.csv) of subjects’ ASL sequences have associated dicoms. This group has several names within each acquisiton that do not distinguish between images. These sequences were uploaded to Flywheel from several sources including XNAT and Stellar Chance 3T.
 
-In order to differentiate between ASL, M0, and Mean Perfusion, refer to BIDS view in the GUI, or BIDS Info via the SDK. [This] (https://github.com/PennLINC/grmpy/blob/gh-pages/referenceFiles/multiple_m0.csv) subset also has two M0 images per acquisiton. However, one M0 is nominal, and another is low quality. As of 6/2/20, the only way of determining which M0 to use is by sight. Some M0s do not have proper associated metadata.
+In order to differentiate between ASL, M0, and Mean Perfusion, refer to BIDS view in the GUI, or BIDS Info via the SDK. [This] (https://github.com/PennLINC/bpd/blob/gh-pages/referenceFiles/multiple_m0.csv) subset also has two M0 images per acquisiton. However, one M0 is nominal, and another is low quality. As of 6/2/20, the only way of determining which M0 to use is by sight. Some M0s do not have proper associated metadata.
 
 Solution as of 6/2/2020, as per meeting with Ted, Diego, and Azeez:
 
