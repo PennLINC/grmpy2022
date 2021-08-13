@@ -3,7 +3,7 @@ layout: default
 title: Image Processing Workflow
 has_children: false
 has_toc: false
-nav_order: 4
+nav_order: 5
 ---
 
 # Image Processing Workflow
@@ -26,7 +26,7 @@ Each step is a flywheel gear that has been launched on each subject in the proje
 
 **Inputs**:
 
-**Heuristic**: [grmpy_heuristic_v4.py] (https://github.com/PennLINC/grmpy/blob/gh-pages/inputFiles/grmpy_heuristic_v4.py*)
+**Heuristic**: <a href="https://github.com/PennLINC/bpd/blob/master/inputFiles/grmpy_heuristic_v4.py">grmpy_heuristic_v4.py</a>
 
 ### Gear Configuration*
 
@@ -39,7 +39,8 @@ Each step is a flywheel gear that has been launched on each subject in the proje
 
 **Version**: 0.3.2_20.0.7
 
-**Inputs**: license.txt (This is a [freesurfer] (https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferWiki) license)
+
+**Inputs**: license.txt (This is a <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferWiki">freesurfer</a> license)
 
 ### Gear Configuration
 
@@ -53,7 +54,8 @@ Source Code: fmriprep_run.sh
 
 ## Step 3: N-Back Task
 ### **N-Back Logfile Scoring**
-The n-back task logfiles were scored using [this] (https://github.com/PennLINC/grmpy/blob/gh-pages/grmpy_nback_scoreALL.ipynb )notebook, with [this] (https://github.com/PennLINC/grmpy/blob/gh-pages/grympytemplate.xml) template file. The output csv was uploaded to Flywheel using [this] Custom Info Uploader (https://pennlinc.github.io/docs/flywheel/usingCustomInfoUploader/).
+
+The n-back task logfiles were scored using <a href="https://github.com/PennLINC/bpd/blob/master/grmpy_nback_scoreALL.ipynb">this</a> notebook, with <a href="https://github.com/PennLINC/bpd/blob/master/grympytemplate.xml">this</a> template file. The output csv was uploaded to Flywheel using the <a href="https://pennlinc.github.io/docs/flywheel/usingCustomInfoUploader/">Custom Info Uploader</a>.
 
 ### **XCP - Task Functional**
 **Gear Name**: XCPENGINE: pipeline for processing of structural and functional data.
@@ -64,9 +66,9 @@ The n-back task logfiles were scored using [this] (https://github.com/PennLINC/g
 
 fMRIPREP Output: fmriprep_filename.zip (This is unique to each subject)
 
-[Design_File] (https://github.com/PennLINC/grmpy/blob/gh-pages/inputFiles/task2.dsn)
+<a href="https://github.com/PennLINC/bpd/blob/master/inputFiles/task2.dsn">Design File</a>
 
-Zip of necessary files: [taskfile.zip] (https://github.com/PennLINC/grmpy/blob/gh-pages/inputFiles/taskfile2.zip)
+<a href="https://github.com/PennLINC/bpd/blob/master/inputFiles/taskfile2.zip"> Zip of necessary files </a>
 
 ### Gear Configuration
 
@@ -85,7 +87,7 @@ Cohort File: cohortfile.csv
 
 fMRIPREP Output: fmriprep_filename.zip (This is unique to each subject)
 
-[Design_File] (https://github.com/PennLINC/grmpy/blob/gh-pages/inputFiles/cbf_new2.dsn)
+<a href="https://github.com/PennLINC/bpd/blob/master/inputFiles/cbf_new2.dsn">Design File</a>
 
 ASL Nifti: asl_image.nii.gz (This is unique to each subject)
 
@@ -106,7 +108,7 @@ Cohort File: cohortfile.csv
 
 fMRIPREP Output: fmriprep_filename.zip (This is unique to each subject)
 
-[Design_File] (https://github.com/PennLINC/grmpy/blob/gh-pages/inputFiles/fc-36p_despike.dsn)
+<a href="https://github.com/PennLINC/bpd/blob/master/inputFiles/fc-36p_despike.dsn">Design File</a>
 
 ### Gear Configuration
 
