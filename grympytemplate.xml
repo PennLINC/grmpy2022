@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbl:scoring ID="id" label="label" xmlns:arc="http://nrg.wustl.edu/arc"
+	xmlns:bbl="http://localhost:8080/bbl" xmlns:cat="http://nrg.wustl.edu/catalog"
+	xmlns:pipe="http://nrg.wustl.edu/pipe" xmlns:prov="http://www.nbirn.net/prov"
+	xmlns:val="http://nrg.wustl.edu/val" xmlns:wrk="http://nrg.wustl.edu/workflow"
+	xmlns:xdat="http://nrg.wustl.edu/security" xmlns:xnat="http://nrg.wustl.edu/xnat"
+	xmlns:xnat_a="http://nrg.wustl.edu/xnat_assessments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xnat:imageSession_ID>12345</xnat:imageSession_ID>
+	<bbl:imageScan_ID>5</bbl:imageScan_ID>
+	<!-- created with XMLSpear -->
+	<!--
+In this task we show faces and the user is asked to choose whether the pictures isn happy,sad etc.
+
+We need to:
+1. Parse the log file and load stimuli and responses
+2. Classify log stims and responses into class, def
+3. Create scores for the overall answer combinations.
+4. Classify response as tp,tn,fp,fn (in this task we have no fp,fn)
+5. for idemo we need (stick files) happy, sad, happy_incorrect, happy_correct, sad_correct,sad_incorrect etc  (ted) 
+-->
+	<bbl:module>frac3A-3.00</bbl:module>
+	<bbl:version>3.00</bbl:version>
+	<!--<bbl:prefix>cirna</bbl:prefix>-->
+	<bbl:description>description</bbl:description>
+	<bbl:stimuli magnitude="1" duration="3" logtype="INDEX" eventtype='Picture'>
+<!--
+	#frac 3back has an extra solid presented before the trial and all indexes are then shuffled up by one..
+ 	This is the pic_ary from the frac3a_3.10.sce file..
+	
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap instr_0;
+	bitmap instr_0;
+	bitmap instr_0;
+-->
+	<bbl:stim name="picJ" code="pic1" index="12"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picM" code="pic1" index="13"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picQ" code="pic1" index="14"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="15"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picG" code="pic1" index="16"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picL" code="pic1" index="17"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="18"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picR" code="pic1" index="19"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picH" code="pic1" index="20"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="21"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picK" code="pic1" index="22"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picJ" code="pic1" index="23"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="24"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picZ" code="pic1" index="25"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picF" code="pic1" index="26"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picN" code="pic1" index="27"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picW" code="pic1" index="28"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picV" code="pic1" index="29"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="30"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picV" code="pic1" index="31"   category="0BACK" expected="NR" classification="foil"/>
+
+	<!--
+	bitmap instr_1;
+	bitmap instr_1;
+	bitmap instr_1;
+	-->
+	
+	<bbl:stim name="picR" code="pic1" index="35"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picT" code="pic1" index="36"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picS" code="pic1" index="37"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picS" code="pic1" index="38"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picR" code="pic1" index="39"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picH" code="pic1" index="40"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picH" code="pic1" index="41"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picW" code="pic1" index="42"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picC" code="pic1" index="43"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picC" code="pic1" index="44"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picL" code="pic1" index="45"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picP" code="pic1" index="46"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picR" code="pic1" index="47"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picP" code="pic1" index="48"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picM" code="pic1" index="49"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picM" code="pic1" index="50"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picM" code="pic1" index="51"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picB" code="pic1" index="52"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picW" code="pic1" index="53"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picK" code="pic1" index="54"    category="1BACK" expected="NR" classification="foil"/>
+	
+	<!--
+	bitmap instr_2;
+	bitmap instr_2;
+	bitmap instr_2;
+	-->
+
+
+	<bbl:stim name="picH" code="pic1" index="58"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picW" code="pic1" index="59"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picN" code="pic1" index="60"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picQ" code="pic1" index="61"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picP" code="pic1" index="62"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picQ" code="pic1" index="63"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picM" code="pic1" index="64"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picT" code="pic1" index="65"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picN" code="pic1" index="66"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picT" code="pic1" index="67"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picH" code="pic1" index="68"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picT" code="pic1" index="69"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picF" code="pic1" index="70"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picK" code="pic1" index="71"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picF" code="pic1" index="72"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picS" code="pic1" index="73"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picK" code="pic1" index="74"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picZ" code="pic1" index="75"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picG" code="pic1" index="76"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picZ" code="pic1" index="77"   category="2BACK" expected="Match" classification="target"/>
+
+	<!--#
+	bitmap instr_2;
+	#bitmap instr_2;
+	#bitmap instr_2;
+	-->
+	<bbl:stim name="picM" code="pic1" index="81"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picG" code="pic1" index="82"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picS" code="pic1" index="83"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picG" code="pic1" index="84"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picS" code="pic1" index="85"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picB" code="pic1" index="86"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picM" code="pic1" index="87"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picN" code="pic1" index="88"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picF" code="pic1" index="89"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picR" code="pic1" index="90"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picF" code="pic1" index="91"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picC" code="pic1" index="92"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picF" code="pic1" index="93"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picN" code="pic1" index="94"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picN" code="pic1" index="95"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picM" code="pic1" index="96"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picW" code="pic1" index="97"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picL" code="pic1" index="98"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picR" code="pic1" index="99"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picL" code="pic1" index="100"   category="2BACK" expected="Match" classification="target"/>
+	
+	<!--
+	bitmap instr_0;
+	bitmap instr_0;
+	bitmap instr_0;
+	-->
+	
+	<bbl:stim name="picN" code="pic1" index="104"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picR" code="pic1" index="105"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picD" code="pic1" index="106"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="107"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picX" code="pic1" index="108"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picN" code="pic1" index="109"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picL" code="pic1" index="110"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picC" code="pic1" index="111"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picK" code="pic1" index="112"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picP" code="pic1" index="113"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="114"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picJ" code="pic1" index="115"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picB" code="pic1" index="116"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picW" code="pic1" index="117"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="118"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picH" code="pic1" index="119"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picZ" code="pic1" index="120"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picH" code="pic1" index="121"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="122"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picS" code="pic1" index="123"   category="0BACK" expected="NR" classification="foil"/>
+
+<!--
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap instr_1;
+	bitmap instr_1;
+	bitmap instr_1;
+-->
+	
+	<bbl:stim name="picH" code="pic1" index="135"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picW" code="pic1" index="136"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picD" code="pic1" index="137"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picD" code="pic1" index="138"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picD" code="pic1" index="139"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picS" code="pic1" index="140"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picS" code="pic1" index="141"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picL" code="pic1" index="142"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picB" code="pic1" index="143"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picT" code="pic1" index="144"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picT" code="pic1" index="145"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picQ" code="pic1" index="146"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picZ" code="pic1" index="147"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picL" code="pic1" index="148"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picR" code="pic1" index="149"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picR" code="pic1" index="150"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picF" code="pic1" index="151"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picG" code="pic1" index="152"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picB" code="pic1" index="153"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picM" code="pic1" index="154"   category="1BACK" expected="NR" classification="foil"/>
+	
+	<!--
+	#bitmap instr_2;
+	#bitmap instr_2;
+	#bitmap instr_2;
+	-->	
+    <bbl:stim name="picJ" code="pic1" index="158"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picF" code="pic1" index="159"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picS" code="pic1" index="160"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picG" code="pic1" index="161"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picS" code="pic1" index="162"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picR" code="pic1" index="163"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picG" code="pic1" index="164"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picN" code="pic1" index="165"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picM" code="pic1" index="166"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picN" code="pic1" index="167"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picZ" code="pic1" index="168"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picN" code="pic1" index="169"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picV" code="pic1" index="170"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picQ" code="pic1" index="171"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picZ" code="pic1" index="172"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picQ" code="pic1" index="173"   category="2BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picN" code="pic1" index="174"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picB" code="pic1" index="175"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picT" code="pic1" index="176"   category="2BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picB" code="pic1" index="177"   category="2BACK" expected="Match" classification="target"/>
+
+
+	<!--
+	bitmap instr_1;
+	bitmap instr_1;
+	bitmap instr_1;
+	-->
+	
+	<bbl:stim name="picR" code="pic1" index="181"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picH" code="pic1" index="182"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picS" code="pic1" index="183"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picS" code="pic1" index="184"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picG" code="pic1" index="185"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picT" code="pic1" index="186"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picT" code="pic1" index="187"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picR" code="pic1" index="188"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picP" code="pic1" index="189"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picC" code="pic1" index="190"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picC" code="pic1" index="191"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picM" code="pic1" index="192"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picJ" code="pic1" index="193"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picK" code="pic1" index="194"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picR" code="pic1" index="195"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picL" code="pic1" index="196"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picL" code="pic1" index="197"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picL" code="pic1" index="198"   category="1BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picF" code="pic1" index="199"   category="1BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picM" code="pic1" index="200"   category="1BACK" expected="NR" classification="foil"/>
+	<!--
+	#bitmap instr_0;
+	#bitmap instr_0;
+	#bitmap instr_0;
+    -->
+    <bbl:stim name="picZ" code="pic1" index="204"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picB" code="pic1" index="205"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picV" code="pic1" index="206"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="207"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picP" code="pic1" index="208"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="209"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picX" code="pic1" index="210"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picL" code="pic1" index="211"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picP" code="pic1" index="212"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="213"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picZ" code="pic1" index="214"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picG" code="pic1" index="215"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picV" code="pic1" index="216"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picB" code="pic1" index="217"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picV" code="pic1" index="218"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picG" code="pic1" index="219"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picJ" code="pic1" index="220"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picX" code="pic1" index="221"   category="0BACK" expected="Match" classification="target"/>
+	<bbl:stim name="picP" code="pic1" index="222"   category="0BACK" expected="NR" classification="foil"/>
+	<bbl:stim name="picD" code="pic1" index="223"   category="0BACK" expected="NR" classification="foil"/>
+
+	<!--
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	bitmap xhair;
+	-->
+
+	
+	
+</bbl:stimuli>
+
+
+<bbl:responses eventtype='Response'>
+			<bbl:response  answer="Match" name="Match" code="1"/>
+			<bbl:response  answer="NR" 	name="NR"  	 code="NR"/>
+</bbl:responses>
+
+
+
+</bbl:scoring>

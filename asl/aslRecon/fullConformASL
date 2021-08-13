@@ -1,0 +1,173 @@
+#!/usr/bin/env bash
+
+###################################################################
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+###################################################################
+
+###################################################################
+# This script brings ASL images acquired using Dr. Vidorreta's
+# spiral sequence into conformity with BBL standards. This process
+# integrates the following steps into a single script:
+#  * spiral reconstruction for ASL using Dr. Vidorreta's script
+#  * re-orientation to RPI using Dr. Elliott's script
+#  * fusion of all volumes into a 4D pseudo-timeseries using
+#    fslmerge, enabling upload of a single file to XNAT
+###################################################################
+
+force_RPI='/home/melliott/scripts/force_RPI.sh'
+spiralReconPrisma='/home/rciric/projects/aslRecon/SpiralReconPrisma_V12Linux'
+sequence2nifti='/home/melliott/scripts/sequence2nifti.sh'
+fix_hdr=/home/melliott/scripts/fix_3dASL_hdr.sh 
+cleanup=Y
+
+###################################################################
+# Usage function
+###################################################################
+Usage(){
+   echo ""; echo ""; echo ""
+   echo "Usage: `basename $0` -t <trajfile> -d <datfile> -r <ref dicom> -o <output> <options>"
+   echo ""
+   echo "Compulsory arguments:"
+   echo " -t : Input trajfile"
+   echo "      The .traj or .hdr file specifying acquisition"
+   echo "      parameters"
+   echo ""
+   echo " -d : Input datfile"
+   echo "      The .dat file containing acquisition data in k"
+   echo "      space"
+   echo ""
+   echo " -r : Input DICOM localiser"
+   echo "      A single DICOM volume acquired using parameters"
+   echo "      similar to those from the ASL acquisition."
+   echo ""
+   echo " -o : Output path"
+   echo ""
+   echo "Optional arguments:"
+   echo " -x : Trace/debug mode"
+   echo "      If this flag is set, then any commands called by the"
+   echo "      fullConformASL routine will be explicitly printed to"
+   echo "      the console or log. Use for debugging. Intermediate"
+   echo "      outputs will be retained if this flag is enabled."
+   echo ""
+   echo ""; echo ""; echo ""
+}
+###################################################################
+# Parse arguments
+###################################################################
+while getopts "t:d:o:r:x" OPTION
+   do
+   case $OPTION in
+   t)
+      traj=${OPTARG}
+      ;;
+   d)
+      dat=${OPTARG}
+      [[ $(echo ${dat}|rev|cut -d"." -f1|rev) != dat ]] && Usage && exit
+      ;;
+   o)
+      out=${OPTARG}
+      ;;
+   r)
+      reference=${OPTARG}
+      ;;
+   x)
+      set -x
+      cleanup=N
+      ;;
+   *)
+      echo "Option not recognised: ${OPTARG}"
+      Usage
+      exit
+   esac
+done
+###################################################################
+# Ensure that all compulsory arguments have been defined
+###################################################################
+[[ -z ${traj} ]] && Usage && exit
+[[ -z ${dat} ]] && Usage && exit
+[[ -z ${out} ]] && Usage && exit
+[[ -z ${reference} ]] && Usage && exit
+
+
+
+
+
+###################################################################
+# 1. Use SpiralReconPrisma to obtain all f and M NifTIs
+###################################################################
+${spiralReconPrisma} \
+   -t ${traj} \
+   -d ${dat} \
+   -o ${out}~TEMP~
+
+
+
+
+
+###################################################################
+# 2. Convert the associated reference DICOM to NIfTI
+###################################################################
+${sequence2nifti} \
+   BOLD_RPI \
+   ${out}~TEMP~dcm2nii.nii \
+   ${reference}
+reference=${out}~TEMP~dcm2nii.nii
+
+
+
+
+
+###################################################################
+# 3. Use force_rpi to ensure that all NIfTIs are in RPI orientation
+###################################################################
+niftis=$(\ls ${out}~TEMP~/*.nii*)
+for lpi in ${niftis}
+   do
+   ext=$(echo ${lpi}|cut -d"." -f1 --complement)
+   [[ ${ext} == "nii.gz" ]] && export FSLOUTPUTTYPE=NIFTI_GZ
+   [[ ${ext} == "nii" ]] && export FSLOUTPUTTYPE=NIFTI
+   [[ ${ext} == "hdr" ]] && export FSLOUTPUTTYPE=NIFTI_PAIR
+   [[ ${ext} == "img" ]] && export FSLOUTPUTTYPE=NIFTI_PAIR
+   [[ ${ext} == "hdr.gz" ]] && export FSLOUTPUTTYPE=NIFTI_PAIR_GZ
+   [[ ${ext} == "img.gz" ]] && export FSLOUTPUTTYPE=NIFTI_PAIR_GZ
+   curorient=$(fslval ${lpi} qform_xorient\
+      |head -c 1)$(fslval ${lpi} qform_yorient\
+      |head -c 1)$(fslval ${lpi} qform_zorient\
+      |head -c 1)
+#   [[ ${curorient} == LPI ]] \
+#      && fslorient -swaporient ${lpi} \
+#      && fslswapdim ${lpi} -x y z ${lpi} \
+#      || ${force_RPI} ${lpi}
+   ${force_RPI} ${lpi}
+done
+
+
+
+
+
+###################################################################
+# 4. Merge all NIfTIs
+###################################################################
+xnifti=$(echo ${niftis}|cut -d" " -f1)
+tr=$(fslval ${xnifti} pixdim4)
+fslmerge -tr ${out} ${niftis} ${tr}
+fslchfiletype NIFTI_GZ ${out}
+
+
+
+
+
+###################################################################
+# 5. Apply reference header information to the primary ASL
+#    acquisition
+###################################################################
+${fix_hdr} ${out} ${reference}
+
+
+
+
+
+###################################################################
+# 6. Clean up intermediate files
+###################################################################
+[[ ${cleanup} == Y ]] && rm -rf ${out}~TEMP~*

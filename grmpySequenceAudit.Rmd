@@ -1,0 +1,67 @@
+---
+title: "GRMPY/BPD Sequence Audit"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+library(scales)
+
+sequence_table <- read.table(file = '/Users/diegodavila/Documents/GRMPY_822831_SeqInfo.tsv', sep = '\t', header = TRUE, fill = TRUE) # This is heudiconv tabulate output 
+
+```
+
+
+
+
+```{r}
+seq_ns <- unique(sequence_table$series_description)
+seq_ns <- seq_ns[-4]
+seq_ns <- as.character(seq_ns)
+sequence_table$patient_id <- as.character(sequence_table$patient_id)
+
+audit <- data.frame(matrix(rep(0, 10305), ncol = 45, nrow = 229))
+colnames(audit) <- seq_ns
+rownames(audit) <- unique(sequence_table$patient_id)
+
+
+for (x in seq_ns){
+  n <- sequence_table %>% 
+    filter(str_detect(series_description, x)) 
+  have_it <- unique(n$patient_id)
+  
+  for (i in rownames(audit)){
+    if (i %in% have_it){
+      audit[i,x] <- c(1)
+    }
+    else{
+      audit[i,x] <- c(0)
+    }
+  }
+}
+
+audit
+```
+```{r}
+#write.csv(audit, "grmpySequenceAudit.csv")
+
+```
+now, let's get missingess proportions
+```{r}
+
+for (x in colnames(audit)){
+  proportion <- 1 - (sum(audit[,x])/229)
+  proportion <- percent(proportion)
+  print(paste(x, "has a missingness of",proportion))
+}
+
+
+```
+
+
+
+
+
+
+

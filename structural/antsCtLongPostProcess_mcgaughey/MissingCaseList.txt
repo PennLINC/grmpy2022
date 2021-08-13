@@ -1,0 +1,96 @@
+sub-095116 SST T_templateExtractedBrain0N4.nii.gz
+sub-095116 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-095116 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-095116 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-095116 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-095116 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-099604 SST T_templateExtractedBrain0N4.nii.gz
+sub-099604 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-099604 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-099604 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-099604 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-099604 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-105176 SST T_templateExtractedBrain0N4.nii.gz
+sub-105176 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-105176 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-105176 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-105176 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-105176 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-109521 SST T_templateExtractedBrain0N4.nii.gz
+sub-109521 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-109521 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-109521 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-109521 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-109521 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-112249 SST T_templateExtractedBrain0N4.nii.gz
+sub-112249 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-112249 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-112249 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-112249 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-112249 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-114709 SST T_templateExtractedBrain0N4.nii.gz
+sub-114709 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-114709 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-114709 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-114709 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-114709 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-117226 SST T_templateExtractedBrain0N4.nii.gz
+sub-117226 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-117226 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-117226 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-117226 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-117226 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-117397 SST T_templateExtractedBrain0N4.nii.gz
+sub-117397 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-117397 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-117397 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-117397 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-117397 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-119791 SST T_templateExtractedBrain0N4.nii.gz
+sub-119791 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-119791 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-119791 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-119791 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-119791 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-121407 SST T_templateExtractedBrain0N4.nii.gz
+sub-121407 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-121407 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-121407 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-121407 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-121407 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-122801 SST T_templateExtractedBrain0N4.nii.gz
+sub-122801 ses-01 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-122801 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-122801 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-122801 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-122801 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-130687 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-130687 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-130896 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-130896 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-131224 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-131224 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-131867 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-131867 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-132179 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-132179 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-132224 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-132224 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-132224 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-132224 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-132224 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-132657 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-132657 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-132657 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-132657 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-132657 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-133220 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-133220 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-133220 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-133220 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-133220 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-139272 ses-02 T1wSubjectToTemplate1Warp.nii.gz/T1wSubjectToTemplate0GenericAffine.mat 
+sub-139272 ses-01 T1wExtractedBrain0N4.nii.gz
+sub-139272 ses-02 T1wExtractedBrain0N4.nii.gz
+sub-139272 ses-01 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)
+sub-139272 ses-02 T1wCorticalThickness.nii.gz (or T1w_CorticalThickness.nii.gz)

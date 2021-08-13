@@ -1,0 +1,4 @@
+SPACE::NETWORK
+:#NAME#MAP#SPACE
+#JLF#/data/jux/BBL/studies/grmpy/processedData/structural/struct_pipeline_20170716/${subject[0]}/${subject[1]}/jlf/${subject[0]}_${subject[1]}_Labels.nii.gz#str
+#Glasser180#/data/jux/BBL/projects/grmpyProcessing/grmpyProcessing2017Scripts/structural/struct_pipeline/180GlasserPNCWithHemispheres.nii.gz#std

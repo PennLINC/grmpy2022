@@ -1,0 +1,9 @@
+SPACE::NETWORK
+:#NAME#MAP#SPACE
+#264PowerPNC#/data/jux/BBL/applications-from-joy/xcpEngine/networks/264PowerPNC.nii.gz#std
+#GordonPNC#/data/jux/BBL/applications-from-joy/xcpEngine/networks/gordonPNC.nii.gz#std
+#GlasserPNC#/data/jux/BBL/applications-from-joy/xcpEngine/networks/180GlasserPNCWithHemispheres.nii.gz#std
+#JLFintersect#/data/jux/BBL/studies/grmpy/processedData/structural/struct_pipeline_20170716/${subject[0]}/${subject[1]}/jlf/${subject[0]}_${subject[1]_Labels.nii.gz
+#GraSP581#/data/jux/BBL/applications-from-joy/xcpEngine/networks/graspPNCdeepStructures2mm581.nii.gz#std
+#GraSP227#/data/jux/BBL/applications-from-joy/xcpEngine/networks/graspPNCdeepStructures2mm227.nii.gz#std
+#GraSP170#/data/jux/BBL/applications-from-joy/xcpEngine/networks/graspPNCdeepStructures2mm170.nii.gz#std

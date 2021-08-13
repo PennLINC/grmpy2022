@@ -1,0 +1,24 @@
+############################################
+##### Read in the Raw Demographic File #####
+############################################
+
+Demo<-read.csv("/data/jux/BBL/studies/grmpy/rawPsycha1/demographics_20180409.csv")
+
+###################################
+##### Remove Unneeded Columns #####
+###################################
+
+Demo<-Demo[,-c(3)]
+Demo<-Demo[-c(1,2),]
+
+#################################################
+##### Recode Variables that Need Processing #####
+#################################################
+
+Demo$visitagemonths<-Demo$visitagemonths/12
+
+#######################
+##### Save Output #####
+#######################
+
+write.csv(Demo, "/data/jux/BBL/studies/grmpy/processedPsycha1/v1_demographics_20180409.csv")

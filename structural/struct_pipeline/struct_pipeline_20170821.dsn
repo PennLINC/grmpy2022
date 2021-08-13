@@ -1,0 +1,142 @@
+#!/usr/bin/env bash
+
+###################################################################
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+###################################################################
+
+
+###################################################################
+# This design file stores the values of all variables required to
+# execute a complete task-free functional connectivity pipeline.
+# You may execute the analysis specified in this design file by
+# calling (in any bash terminal):
+#
+# xcpEngine /home/asharma/xcpEngine/designs/struct_pipeline_201705311006.dsn
+#
+# Variables fall into five general categories:
+# * ANALYSIS VARIABLES are used at all stages of this analysis.
+# * PIPELINE specifies the modules that comprise the analysis.
+# * GLOBAL VARIABLES are used at all stages of all analyses.
+# * MODULE VARIABLES are used during one stage of the analysis.
+#                  These are typically array variables with array
+#                  indices equal to the index of the analysis
+#                  stage during which they are used.
+# * OUTPUT VARIABLES may be used at all stages of the analysis.
+#                  These are sometimes array variables with array
+#                  indices equal to the value of the primary
+#                  subject identifier. They will appear only in
+#                  localised design files.
+###################################################################
+
+
+###################################################################
+# ANALYSIS VARIABLES
+###################################################################
+
+analysis=struct_pipeline_20170821
+design=struct_pipeline_20170821.dsn
+path_cohort=/data/joy/BBL/projects//grmpyProcessing2017/structural/n115_Cohort_20170716.csv
+subjects_ct=3
+xsubj=100088,20130501x7944,/data/joy/BBL/studies/reward/rawData/100088/20130501x7944/t1/nifti/100088_20130501x7944_t1.nii.gz
+xsubj_idx=1
+ximg=
+img=${subject[2]}
+xants=
+xstruct=
+struct=${subject[2]}
+prefix=${subject[0]}_${subject[1]}
+xfm_warp=
+ixfm_warp=
+xfm_affine=
+ixfm_affine=
+out_super=/data/joy/BBL/studies/grmpy/processedData/structural/struct_pipeline_20170716
+out=/data/joy/BBL/studies/grmpy/processedData/structural/struct_pipeline_20170716/${subject[0]}/${subject[1]}
+out_group=/data/joy/BBL/studies/grmpy/processedData/structural/struct_pipeline_20170716
+space=structural
+template=/data/joy/BBL/studies/pnc/template/pnc_template_brain.nii.gz
+
+###################################################################
+# PIPELINE
+###################################################################
+
+pipeline=antsCT,gmd,jlf,roiquant,norm,strucQA
+
+###################################################################
+# GLOBAL VARIABLES
+###################################################################
+
+XCPEDIR=/data/joy/BBL/applications/xcpEngine
+RPATH=/share/apps/R/R-3.2.3/bin/R
+FSLDIR=/share/apps/fsl/5.0.8
+ANTSPATH=/data/joy/BBL/applications/ants_20151007/bin
+KEEPNUM=1
+NUMOUT=0
+TIMESTAMP=1
+
+###################################################################
+# 1 antsCT
+###################################################################
+
+EXTRACTION_PRIOR[1]=.2
+N4_CONVERGENCE[1]=[50x50x50x50,0.00001]
+N4_SHRINK_FACTOR[1]=1
+N4_SPLINE_PARAMS[1]=200
+templateMask=/data/joy/BBL/studies/pnc/template/templateMask.nii.gz
+
+templatePriors=/data/joy/BBL/studies/pnc/template/priors/prior_00%d.nii.gz
+templateNonExtracted=/data/joy/BBL/studies/pnc/template/pnc_template.nii.gz
+templateMaskDil=/data/joy/BBL/studies/pnc/template/templateMaskDil.nii.gz
+structural_rerun[1]=N
+structural_cleanup[1]=Y
+structural_process[1]=ACT
+
+###################################################################
+# 2 GMD
+###################################################################
+
+gmdMask[2]=/data/joy/BBL/studies/grmpy/processedData/structural/struct_pipeline_20170821${subject[0]}/${subject[1]}/antsCT/${subject[0]}_${subject[1]}_BrainExtractionMask
+gmd_rerun[2]=N
+gmd_cleanup[2]=Y
+
+###################################################################
+# 3 JLF
+###################################################################
+
+newAntsPath[3]=/data/joy/BBL/applications/ANTsJLF_201603/bin/
+keepJLFWarps[3]=0
+jlfExtract[3]=1
+jlfCohort[3]=SexBalanced20
+jlf_rerun[3]=Y
+
+###################################################################
+# 4 ROIQUANT
+###################################################################
+
+roiquant_roi[4]=/data/joy/BBL/projects/grmpyProcessing2017/structural/LaunchPipeline/grmpy.parc
+roiquant_rerun[4]=N
+roiquant_cleanup[4]=Y
+
+###################################################################
+# 5 NORM
+###################################################################
+
+norm_prog[5]=ants
+norm_template[5]=/data/joy/BBL/studies/pnc/template/pnc_template_brain.nii.gz
+norm_rerun[5]=Y
+norm_cleanup[5]=Y
+
+###################################################################
+# 6 strucQA
+###################################################################
+
+strucQA_gm[6]=Y
+strucQA_gm_val[6]=2,4
+strucQA_wm[6]=Y
+strucQA_wm_val[6]=3
+strucQA_csf[6]=Y
+strucQA_csf_val[6]=1
+strucQA_cort[6]=Y
+strucQA_cort_val[6]=4
+strucQA_seg[6]=/data/joy/BBL/studies/grmpy/processedData/structural/struct_pipeline_20170821/${subject[0]}/${subject[1]}/antsCT/${subject[0]}_${subject[1]}_BrainSegmentation
+strucQA_rerun[6]=N
+strucQA_cleanup[6]=Y

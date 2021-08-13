@@ -1,0 +1,5 @@
+ comb=read.csv('/data/jux/BBL/projects/grmpyProcessing/grmpyProcessing2017Scripts/asl/basiltest/grmpncQA.csv')
+ write.table(comb$'bblid', file = '/data/jux/BBL/projects/grmpyProcessing/grmpyProcessing2017Scripts/asl/basiltest/GPbblid.txt', sep = '\t',row.names = FALSE, col.names = FALSE)
+ grm=cbind(rep(1,nrow(comb)),comb$'grmpymotion',comb$'age'); pnc=cbind(rep(1,nrow(comb)),comb$'pncmotion',comb$'age')
+ write.csv(grm,file = '/data/jux/BBL/projects/grmpyProcessing/grmpyProcessing2017Scripts/asl/basiltest/grmcov.csv',row.names=FALSE)
+ write.csv(pnc,file = '/data/jux/BBL/projects/grmpyProcessing/grmpyProcessing2017Scripts/asl/basiltest/pnccov.csv',row.names=FALSE)

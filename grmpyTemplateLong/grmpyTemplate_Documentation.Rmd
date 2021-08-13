@@ -1,0 +1,189 @@
+---
+title: "grmpyTemplate Documentation"
+output: word_document
+---
+
+To create a representative midpoint template, we want to insure: 
+1) An equal representation from each age range
+2) An equal distribution of males and females
+
+###Locate demographic data of interest:
+
+PNC data from timepoint 1 (ses_01):/data/joy/BBL/studies/pnc/n1601_dataFreeze/demographics/n1601_demographics_go1_20161212.csv
+
+grmpy data from timepoint 2 (ses_02):/data/jux/BBL/studies/grmpy/rawPsycha1/old/demographics_20180803.csv
+
+```{r include=FALSE}
+library(dplyr)
+library(sqldf)
+
+#Map to and load metadata
+
+grmpyTimepoint1_dir <- "/data/joy/BBL/studies/pnc/n1601_dataFreeze/demographics/"
+grmpyTimepoint2_dir <- "/data/jux/BBL/studies/grmpy/rawPsycha1/old"
+
+grmpyTimepoint1_fp <- file.path(grmpyTimepoint1_dir, "n1601_demographics_go1_20161212.csv")
+grmpyTimepoint2_fp <- file.path(grmpyTimepoint2_dir, "demographics_20180803.csv")
+
+T1_metadata <- read.delim(file = grmpyTimepoint1_fp, header = T, as.is = T, sep = ",")
+T2_metadata <- read.delim(file = grmpyTimepoint2_fp, header = T, as.is = T, sep = ",")
+
+#Select variables of interest (in this case:L bblid, sex, age at time of scan)
+
+T1 <-T1_metadata %>%
+  select(bblid, sex, ageAtScan1)
+T2 <- T2_metadata %>%
+  select(bblid, sex, visitagemonths)
+
+#Filtering PNC data for grmpy subjects
+
+T1_grmpySubjectsExtracted <- sqldf("SELECT bblid, ageAtScan1 
+              FROM T1
+              JOIN T2 USING(bblid)")
+
+grmpyTemplateDemographics <- merge(T2, T1_grmpySubjectsExtracted, by= "bblid")
+
+```
+
+For subjects that overlap between PNC and grmpy datasets (now collected in grmpyTemplateDemographics), average ageAtScan1 (from PNC timepoint 1) and visitagemonths (from grmpy timepoint 2) to get an age midpoint. Here, the variable has been named "midpointagemonths"
+
+###Using these age midpoints, separate the subjects into quartiles:
+
+```{r}
+#Creating age midpoint
+
+grmpyTemplateDemographics$midpointagemonths = (grmpyTemplateDemographics$ageAtScan1 + grmpyTemplateDemographics$visitagemonths) / 2
+
+#Separating subjects into quartiles
+
+grmpyTemplateDemographics$quartile <- ntile(grmpyTemplateDemographics$midpointagemonths, 4)
+grmpyTemplateDemographics[order(grmpyTemplateDemographics$quartile),]
+
+```
+
+###You can make a histogram of these age midpoints to visualize the distribution:
+
+```{r}
+hist(grmpyTemplateDemographics$midpointagemonths)
+```
+
+For the grmpyTemplate, we want to select 32 subjects (n = 8 from each age quartile with 4 from each sex) as randomly as possible.
+
+###Random selection extracted the following IDs:
+sub-088770
+sub-098567
+sub-120562
+sub-130121
+sub-093051
+sub-108202
+sub-093278
+sub-130896
+sub-088608
+sub-088773
+sub-089279
+sub-106880
+sub-090077
+sub-112332
+sub-125535
+sub-116354
+sub-092927
+sub-093734
+sub-122522
+sub-127008
+sub-129354
+sub-086350
+sub-104785
+sub-119302
+sub-081760
+sub-083999
+sub-098871
+sub-122528
+sub-081725
+sub-090262
+sub-104059
+sub-116019
+
+###Now that subjects have been chosen, the nifti file for each ID needs to be organized. 
+
+antsMultivatiateTemplateConstruction.sh requires a file containing the datapaths to your nifti files. For the grmpyTemplate, this was a text file that looked like:
+
+/home/kmcgaughey/grmpy_midpointtemplate/sub-081725_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-081760_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-083999_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-086350_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-088608_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-088770_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-088773_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-089279_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-090077_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-090262_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-092927_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-093051_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-093278_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-093734_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-098567_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-098871_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-104059_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-104785_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-106880_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-108202_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-112332_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-116019_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-116354_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-119302_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-120562_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-122522_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-122528_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-125535_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-127008_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-129354_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-130121_T_templateBrainExtractionBrain.nii.gz
+/home/kmcgaughey/grmpy_midpointtemplate/sub-130896_T_templateBrainExtractionBrain.nii.gz
+
+**NOTE: Here, T_templateBrainExtractionBrain.nii.gz was used. While antsMultivariateTemplateConstruction.sh does have bias correction built in, future templates should still pull from the T_templateExtractedBrain0N4.nii.gz file.
+
+
+
+###So all datapaths would be the same, nifti files were copied into a temp directory:
+
+general=$(cat /home/kmcgaughey/grmpy_midpointtemplate/midpointtemplate_IDs.txt)
+
+for i in $general;do
+    
+    bblIDs=$(echo ${i});
+    echo $bblIDs
+    cp /data/joy/BBL/studies/grmpy/BIDS/derivatives/antsct/${bblIDs}/${bblIDs}_T1w_SingleSubjectTemplate/T_templateBrainExtractionBrain.nii.gz /home/kmcgaughey/grmpy_midpointtemplate/${bblIDs}_T_templateBrainExtractionBrain.nii.gz 
+  
+done
+
+
+
+###antsMultivatiateTemplateConstruction.sh has a number of flags that can be appended. 
+
+-d: 3, in most cases, specifying that data is 3-dimensional
+-k: Number of modalities used to construct the template (for example, if you wanted to create a multimodal template with T1, T1, and FA components "-k 3")
+-c: Specifying 1 takes advantage of computing cluster. Specifying 0 will run jobs serially. 
+-r: Specify 1 if there is no initial template
+-s: Type of similarity metric used for registration 
+-o: OutputPrefix; this will be appended to all output files (files will be named as OutputPrefix_template0.nii.gz, OutputPrefix_template1.nii.gz, … etc)
+
+Within the output, transform files should exist for each input file, describing the transformation for that subject to the group average. The GenericAffine.mat file describes the affine transform, Warp.nii.gz describes the non linear transform, and InverseWarp.nii.gz describes the inverse of the non linear transform.
+
+
+
+###The finalized script run for the grmpyTemplate was:
+
+path=/home/kmcgaughey/grmpy_midpointtemplate 
+
+/share/apps/ANTs/2014-06-23/build/bin/antsMultivariateTemplateConstruction.sh -d 3 -k 1 -c 1 -r 1 -s CC -o $path/ANTs_grmpyTemplate/grmpy_midpointTemplate $path/template_datapaths.txt
+
+
+
+###Template-specific grmpyTemplate output was:
+
+grmpy_midpointTemplatetemplate0Affine.txt  
+grmpy_midpointTemplatetemplate0.nii.gz
+grmpy_midpointTemplatetemplate0warp.nii.gz
+grmpy_midpointTemplatetemplatewarplog.txt
+
+These files have been relocated to a temp. directory: /data/joy/BBL/studies/grmpy/grmpyTemplate
