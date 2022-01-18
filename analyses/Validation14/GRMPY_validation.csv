@@ -1,0 +1,2 @@
+files,type,severity,description,code,url
+/sub-105176/ses-10571/perf/sub-105176_ses-10571_m0scan.json,INVALID JSON ENCODING,error,JSON files must be valid utf-8.,123,https://neurostars.org/search?q=INVALID JSON ENCODING
