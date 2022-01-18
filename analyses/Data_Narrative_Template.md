@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Data Narrative
+title: Pipeline Documentation/Data Narrative
 has_children: false
 has_toc: false
-nav_order: -0
+nav_order: 6
 ---
 
 ## Data Narrative for GRMPY (based off RBC template, but modified)
