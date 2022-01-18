@@ -87,7 +87,7 @@ For which project(s) is it intended? Please link to project pages below:
 * Do you have a DUA? Who is allowed to access the data?
 -
 * Where was the data acquired? 
-SC3T, HUP6. Acquired from FlyWheel, collected previously as [specified](https://pennlinc.github.io/grmpyproject/)
+SC3T, HUP6. Acquired from FlyWheel, collected previously as [specified](https://pennlinc.github.io/grmpy2022/)
 * Describe the data. What type of information do we have? Things to specify include:
    - number of subjects: 231 
    - types of images: func, perf, anat, dwi
@@ -114,7 +114,7 @@ CUBIC: /cbica/projects/GRMPY/project/backup
 Kahini Mehta
 * GitHub Link to curation scripts/heuristics: 
 [https://github.com/PennLINC/Flywheel_Curation/tree/master/Projects/GRMPY_822831](https://github.com/PennLINC/Flywheel_Curation/tree/master/Projects/GRMPY_822831); see heuristic version 4  & pull request for version 5 that fixed BIDS errors in fmap IntendedFors
-* GitHub Link to final CuBIDS csvs: [https://github.com/kahinimehta/GRMPYGithub](https://github.com/kahinimehta/GRMPYGithub)
+* GitHub Link to final CuBIDS csvs: [https://pennlinc.github.io/grmpy2022/analyses](https://github.com/kahinimehta/GRMPYGithub)
 * Describe the Curation Process. Include a list of the initial and final validation errors and warnings.
 See general process and BIDS validation list. 
 * Describe additions, deletions, and metadata changes (if any).
