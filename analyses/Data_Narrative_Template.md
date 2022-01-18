@@ -5,7 +5,6 @@ Manually deleted duplicate NIFTIs --> ran BIDS validate on all data --> uploaded
 
 # BIDS Validation
 
-
 Upon [first](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation1) run of the validator, we found 315 errors:
 
 [ERROR CODE1 + Naming Issue]: 314
@@ -72,10 +71,10 @@ Performed [twenty sixth](https://github.com/PennLINC/grmpy2022/tree/master/analy
    
 ### Plan for the Data 
 
-* Why does PennLINC need this data?
-Analysis of GRMPY data. 
-* For which project(s) is it intended? Please link to project pages below:
-[GRMPY](https://pennlinc.github.io/grmpyproject/)
+Why does PennLINC need this data?
+* Analysis of GRMPY data. 
+For which project(s) is it intended? Please link to project pages below:
+*[GRMPY](https://pennlinc.github.io/grmpy2022/)
 * What is our goal data format?
    * i.e. in what form do we want the data by the end of the "Curation" step? BIDS? Something else? 
    In BIDS format
@@ -132,7 +131,7 @@ Used cubids-add-nifti-info, cubids-remove-metadata-fields as described [here](ht
       * Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
       * Path to exemplar outputs: eventually just ran on all participants after one exemplar was successful
       * 231 subjects ran. Acc to grep: 230 successful, 1 failed (106071) due to no T1  
-      * Link to audit: https://github.com/kahinimehta/GRMPYGithub/blob/main/FMRIPREP_AUDIT.csv
+      * Link to audit: https://github.com/PennLINC/grmpy2022/tree/master/analyses/FMRIPREP_AUDIT.CSV
       * Outputs: /cbica/projects/GRMPY/project/curation/testing/fmriprep_outputs
 
    * For each pipeline (e.g. QSIPrep, fMRIPrep, XCP, C-PAC), please fill out the following information:
@@ -144,9 +143,19 @@ Used cubids-add-nifti-info, cubids-remove-metadata-fields as described [here](ht
    * Did you implement exemplar testing? If so, please fill out the information below:
       * Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
       * Path to exemplar outputs: just ran on all subjects
-      * Link to audit: https://github.com/kahinimehta/GRMPYGithub/blob/main/XCP_AUDIT.csv
+      * Link to audit:https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV
       * Outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
 
+   * Pipeline Name: QSIPrep
+   * Who is responsible for running preprocessing pipelines/audits on this data?
+   Kahini Mehta
+   * Where are you running these pipelines? CUBIC? PMACS? Somewhere else?
+   CUBIC
+   * Did you implement exemplar testing? If so, please fill out the information below:
+      * Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
+      * Path to exemplar outputs: just ran on all subjects. 175 successful, while 56 errors due to no DWI data. 
+      * Link to audit: https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV
+      * Outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
 ### Post Processing 
 
 * Who is using the data/for which projects are people in the lab using this data?
