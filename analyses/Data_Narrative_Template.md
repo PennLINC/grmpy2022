@@ -5,7 +5,8 @@ Manually deleted duplicate NIFTIs --> ran BIDS validate on all data --> uploaded
 
 # BIDS Validation
 
-Upon [first](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation1/GRMPY-validation.csv) run of the validator, we found 315 errors:
+
+Upon [first](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation1) run of the validator, we found 315 errors:
 
 [ERROR CODE1 + Naming Issue]: 314
 [ERROR CODE55 + JSON file incorrectly formatted]: 1
@@ -14,60 +15,60 @@ Attempts to resolve:
 1. Removed all the files that shouldn't be in the directory from running cubids-group
 2. Manually added "Name" back to dataset_description.json
 
-Upon [second](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation2/GRMPY-validation.csv) run of the validator, we found 311 errors:
+Upon [second](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation2) run of the validator, we found 311 errors:
 
 [ERROR CODE1 + Naming Issue]: 311
 However, these errors are due to ASL files which will later be replaced and can be ignored for now. Warnings of note include: 
 [WARNING CODE25 + EVENTS_TSV_MISSING]: 251, chosen to ignore at this point and consider adding the tsvs later
 After looking at the summary sheet, worked to fix faulty IntendedFors and other errors regarding unused FieldMaps. Satisfied with validation results, proceeded to optimization. 
 
-Upon [third](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation3) run of the group, we found some unused fieldmaps to be fixed: fixed these by editing paths manually on cubic, re-running group. 
+Upon [third](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation3) run of the group, we found some unused fieldmaps to be fixed: fixed these by editing paths manually on cubic, re-running group. 
 
-Upon [fourth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation4) run of the group, we fixed most of the errors, but made some changes where the IntendedFors of certain files had some errors. 
+Upon [fourth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation4) run of the group, we fixed most of the errors, but made some changes where the IntendedFors of certain files had some errors. 
 
-Upon [fifth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation5/GRMPY-validation.csv) run of the group, we fixed most of the errors - still some typos in some IntendedFors in the fmaps, fixed those after looking at summary sheet. 
+Upon [fifth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation5) run of the group, we fixed most of the errors - still some typos in some IntendedFors in the fmaps, fixed those after looking at summary sheet. 
 
-Upon [sixth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation6/GRMPY-validation.csv) run of the group, one last IntendedFor to fix.  
+Upon [sixth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation6) run of the group, one last IntendedFor to fix.  
 
-Upon [seventh](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation7/GRMPY-validation.csv) run of the group, we were satisfied. 
+Upon [seventh](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation7) run of the group, we were satisfied. 
 
-Performed [eighth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation8/GRMPY-validation.csv) run of the group after deleting extra session. Fixed issues of concern. 
+Performed [eighth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation8) run of the group after deleting extra session. Fixed issues of concern. 
 
-Performed [ninth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation9/GRMPY-validation.csv) run of the group after deleting ASL data via CuBIDS apply. 
+Performed [ninth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation9) run of the group after deleting ASL data via CuBIDS apply. 
 
-Due to error in applying cubids changes, [tenth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation10/GRMPY-validation.csv) run of the group after cubids-undo. However, still some errors. Used git hard --resest to revert to initial state, ran validation again. 
+Due to error in applying cubids changes, [tenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation10) run of the group after cubids-undo. However, still some errors. Used git hard --resest to revert to initial state, ran validation again. 
 
-Performed [eleventh](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation11/GRMPY-validation.csv) run of the group after reverting back; same results as run 8. 
+Performed [eleventh](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation11) run of the group after reverting back; same results as run 8. 
 
-Performed [twelfth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation12/GRMPY-validation.csv) run of the group after cubids-apply renaming variants and deleting ASL- seems to have worked well, apart from one variant yet to be renamed. 
+Performed [twelfth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation12) run of the group after cubids-apply renaming variants and deleting ASL- seems to have worked well, apart from one variant yet to be renamed. 
 
-Performed [thirteenth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation13/GRMPY-validation.csv) run of the group after cubids-apply removing variants with BOLD data under 3 minutes, and 1 dwi variant with an odd number of volumes. 
+Performed [thirteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation13) run of the group after cubids-apply removing variants with BOLD data under 3 minutes, and 1 dwi variant with an odd number of volumes. 
 
-Performed [fourteenth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation14/GRMPY-validation.csv) run of the group after adding ASL data. Removed ReconstructionMethod from .json after validate/group wouldn't run on the data
+Performed [fourteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation14 run of the group after adding ASL data. Removed ReconstructionMethod from .json after validate/group wouldn't run on the data
 
-Performed [fifteenth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation15/GRMPY-validation.csv) run of the group. Found repetition time preparation missing as well as some repetition time variants. Some other metadata missing, some niftis too small, and some participants missing niftis for asl data despite jsons being present. Removed those participants' perf data. 
+Performed [fifteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation15) run of the group. Found repetition time preparation missing as well as some repetition time variants. Some other metadata missing, some niftis too small, and some participants missing niftis for asl data despite jsons being present. Removed those participants' perf data. 
 
-Performed [sixteenth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation16/GRMPY-validation.csv) run of the group. Ran add-nifti-info to see if it would fix some of the errors. 
+Performed [sixteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation16) run of the group. Ran add-nifti-info to see if it would fix some of the errors. 
 
-Performed [seventeenth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation17/GRMPY-validation.csv) run of the group. Saw some m0scans with 0 numvolums, removed their perf data. Missing metadata problem persisted. 
+Performed [seventeenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation17) run of the group. Saw some m0scans with 0 numvolums, removed their perf data. Missing metadata problem persisted. 
 
-Performed [eighteenth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation18/GRMPY-validation.csv) run of the group. Missing metadata persisted. Had to readd correct, complete ASL and restart process of validation for ASL. 
+Performed [eighteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation18) run of the group. Missing metadata persisted. Had to readd correct, complete ASL and restart process of validation for ASL. 
 
-Performed [nineteenth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation19/GRMPY-validation.csv) run of the group. No errors of note. Some variants to consider in summary csv, plus RepetitionTimePreparation set to 0 instead of 4. Manually changed RTPrep. 
+Performed [nineteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation19) run of the group. No errors of note. Some variants to consider in summary csv, plus RepetitionTimePreparation set to 0 instead of 4. Manually changed RTPrep. 
 
-Performed [twentieth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation20/GRMPY-validation.csv) run of the group, since I had to change RT Prep values. 
+Performed [twentieth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation20) run of the group, since I had to change RT Prep values. 
 
-Performed [twenty first](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation21/GRMPY-validation.csv) run of the group, since I had to change RT Prep values from 4 to match RT values. Had to change RT tolerance for variants with RT differences of a small magnitude. 
+Performed [twenty first](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation21) run of the group, since I had to change RT Prep values from 4 to match RT values. Had to change RT tolerance for variants with RT differences of a small magnitude. 
 
-Performed [twenty second](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation22) run of the group - just grouping - since I had to change RT tolerance for variants with RT differences of a small magnitude. Had to run cubids-apply to rename variants and purge ASL scans with numvol less than 60.
+Performed [twenty second](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation22) run of the group - just grouping - since I had to change RT tolerance for variants with RT differences of a small magnitude. Had to run cubids-apply to rename variants and purge ASL scans with numvol less than 60.
 
-Performed [twenty third](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation23) run of the group. Some m0 type errors, variants all renamed. M0 intended fors not changed, changed manually and reran. 
+Performed [twenty third](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation23) run of the group. Some m0 type errors, variants all renamed. M0 intended fors not changed, changed manually and reran. 
 
-Performed [twenty fourth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation24) run of the group. Had to undo all changes - did cubids_undo, datalad save, and undo twice so could apply new version of cubids to asl data.
+Performed [twenty fourth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation24) run of the group. Had to undo all changes - did cubids_undo, datalad save, and undo twice so could apply new version of cubids to asl data.
 
-Performed [twenty fifth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation25) run of the group. Reverted back to how things were at Validation22. Could not rename ASL variants due to CuBIDS/BIDS issues, decided simply to purge shorter scans via cubids-apply and not rename any variants and then validate again. 
+Performed [twenty fifth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation25) run of the group. Reverted back to how things were at Validation22. Could not rename ASL variants due to CuBIDS/BIDS issues, decided simply to purge shorter scans via cubids-apply and not rename any variants and then validate again. 
 
-Performed [twenty sixth](https://github.com/kahinimehta/GRMPYGithub/blob/main/Validation26) run of the group. Satisfied with results!
+Performed [twenty sixth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation26) run of the group. Satisfied with results!
    
 ### Plan for the Data 
 
