@@ -3,7 +3,7 @@ layout: default
 title: Pipeline Documentation/Data Narrative
 has_children: false
 has_toc: false
-nav_order: 6
+nav_order: 4
 ---
 
 # Data Narrative for GRMPY
@@ -64,7 +64,7 @@ GitHub Link to curation scripts/heuristics:
 
 * GitHub Link to final CuBIDS csvs: [https://pennlinc.github.io/grmpy2022/analyses](https://pennlinc.github.io/grmpy2022/analyses)
 
-# General process
+## General process
 1. Manually deleted duplicate NIFTIs on Flywheel
 2. Ran BIDS validate on all data 
 3. Uploaded data to CUBIC
@@ -73,20 +73,20 @@ GitHub Link to curation scripts/heuristics:
 
 ## 5. BIDS Validation
 
-Upon [first](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation1) run of the validator, we found naming issues and the description.json incorrectly formatted.
-Attempts to resolve: 
+- Upon [first](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation1) run of the validator, we found naming issues and the description.json incorrectly formatted.
+Attempts to resolve/ actions: 
 1. Removed all the files that shouldn't be in the directory from running cubids-group
 2. Manually added "Name" back to dataset_description.json
 
-Upon [second](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation2) run of the validator, we found naming issues and missing events TSV errors:
+- Upon [second](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation2) run of the validator, we found naming issues and missing events TSV errors:
 However, the naming errors were due to ASL files which would later be replaced. Events TSVs were also ignored. 
-Attempts to resolve:
+Attempts to resolve/actions:
 1. After looking at the summary sheet, worked to fix faulty IntendedFors and other errors regarding unused FieldMaps. 
 2. Created a new heuristic and re-curated subjects on Flywheel Manually fixed IntendedFors on CUBIC. 
 
 
-Upon [third](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation3) run of the group, unused FieldMaps error persisted. 
-Attempts to resolve:
+- Upon [third](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation3) run of the group, unused FieldMaps error persisted. 
+Attempts to resolve/actions:
 1. After looking at the summary sheet, worked to fix faulty IntendedFors manually on CUBIC.
 
 Upon [fourth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation4) run of the group, unused FieldMaps error persisted. 
@@ -103,7 +103,7 @@ Attempts to resolve:
 
 Upon [seventh](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation7) run of the group, we were satisfied with the fieldmaps. 
 
-Performed [eighth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation8) run of the group, after noticing that two participants had an extra session. Namely, for subject 20120, session 10939 was not used. For subject 95257, session 11191 was dropped. However, subject 20120 does not have fracback, and subject 95257 has all imscribe parameters set to 0. 
+Performed [eighth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation8) run of the group, after noticing that two participants had an extra session. Namely, for BBL 20120, session 10939 was not used. For BBL 95257, session 11191 was dropped. However, BBL 20120 does not have fracback, and BBL 95257 has all imscribe parameters set to 0 for the sessions chosen. 
 
 Performed [ninth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation9) run of the group after deleting ASL data (to add in the data from Aziz's ASLPrep paper) and renaming variants via CuBIDS-apply. 
 
@@ -150,7 +150,7 @@ Performed [twenty sixth](https://github.com/PennLINC/grmpy2022/tree/master/analy
 6. Started setting up preprocessing for exemplars for processing pipelines. 
 
 
-## 7. Preprocessing Pipelines 
+## 6. Preprocessing Pipelines 
 #### Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
    * fMRIPrep run on CUBIC by Kahini Mehta
       * I first ran the pipeline on one exemplar. After this was successful, I proceeded to run all the subjects at once. 
@@ -168,7 +168,7 @@ Performed [twenty sixth](https://github.com/PennLINC/grmpy2022/tree/master/analy
       * Link to audit: https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV
       * Outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
 
-### 8. Post Processing 
+## 7. Post Processing 
 
 Who is using the data/for which projects are people in the lab using this data?
 * Kahini Mehta
