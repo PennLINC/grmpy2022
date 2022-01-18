@@ -1,4 +1,4 @@
-# GRMPY/ BPD Project
+# GRMPY study
 
 ## About the theme
 This is a fork of just-the-docs.
