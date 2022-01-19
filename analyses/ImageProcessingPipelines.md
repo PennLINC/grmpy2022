@@ -11,31 +11,115 @@ nav_order: 5
 {: .no_toc }
 1. Started setting up preprocessing for exemplars for processing pipelines. Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
 2. Preprocessing Pipelines 
-
+<img src="/grmpy2022/assets/images/grmpyflowchart.png" alt="Processing Flowchart"> 
 * TOC
 {:toc}
 
 ## fMRIPrep run on CUBIC by Kahini Mehta
+- Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/fmriprep-container
+
+- Container version: 20.2.3
+
+- Flags used: 
+
+'''
+
+singularity run --cleanenv -B ${PWD} \
+    pennlinc-containers/.datalad/environments/fmriprep-20-2-3/image \
+    inputs/data \
+    prep \
+    participant \
+    -w ${PWD}/.git/tmp/wkdir \
+    --n_cpus 1 \
+    --stop-on-first-crash \
+    --fs-license-file code/license.txt \
+    --skip-bids-validation \
+    --output-spaces MNI152NLin6Asym:res-2 \
+    --participant-label "$subid" \
+    --force-bbr \
+    --cifti-output 91k -v -
+
+'''
+
 - First ran  pipeline on one exemplar. Then proceeded to run all the subjects at once. 
 
-- 231 subjects ran. Via grep checks, 230 were successful, while 1 failed (BBL 106071) due to no T1  
+- Number of Subjects Run: 231
+
+- Finished Successfully: 230
+
+- Failed due to no TW1: 1
+
+- Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/fmriprep_outputs
 
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/FMRIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/FMRIPREP_AUDIT.CSV)
 
-- Outputs: /cbica/projects/GRMPY/project/curation/testing/fmriprep_outputs
+
 
 ##  XCP run on CUBIC by Kahini Mehta
-- Successful on all 230 subjects output by fMRIPrep, according to grep checks. Some participants re-run as jobs were inexplicably killed halfway. 
+- Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/xcp-abcd-container
 
-- Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV)
+- Container version: 0.0.8 
 
-- Outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
+- Flags used: 
+
+'''
+
+singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/xcp-abcd-0-0-8/image inputs/data/fmriprep xcp participant \
+--despike --lower-bpf 0.01 --upper-bpf 0.08 --participant_label $subid -p 36P -f 10 -w ${PWD}/.git/tmp/wkdir
+singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/xcp-abcd-0-0-8/image inputs/data/fmriprep xcp participant \
+--despike --lower-bpf 0.01 --upper-bpf 0.08 --participant_label $subid -p 36P -f 10 -w ${PWD}/.git/tmp/wkdir --cifti
+
+'''
+
+- No exemplar testing
+
+- Number of Subjects Run: 230
+
+- Finished Successfully: 230
+
+- Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
+
+- Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/FMRIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV)
+
 
 ##  QSIPrep run on CUBIC by Kahini Mehta
-- According to grep, 175 participants successful.  54 errors due to no DWI data, 1 error (BBL 106071) due to  no T1, and 1 participant (BBL 92211) to be re-run due to job inexplicably being killed halfway. 
+- Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/qsiprep-container
 
-- Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
+- Container version: 0.14.3
 
-- Outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
+- Flags used: 
 
-<img src="/grmpy2022/assets/images/grmpyflowchart.png" alt="Processing Flowchart"> 
+'''
+
+singularity run --cleanenv -B ${PWD} \
+    pennlinc-containers/.datalad/environments/qsiprep-0-14-3/image \
+    inputs/data \
+    prep \
+    participant \
+    -v -v \
+    -w ${PWD}/.git/wkdir \
+    --n_cpus $NSLOTS \
+    --stop-on-first-crash \
+    --fs-license-file code/license.txt \
+    --skip-bids-validation \
+    --participant-label "$subid" \
+    --unringing-method mrdegibbs \
+    --output-resolution 1.5
+
+'''
+
+- No exemplar testing.
+
+- Number of Subjects Run: 230
+
+- Finished Successfully: 176
+
+- Failed due to no TW1: 1
+
+- Failed due to no DWI: 54
+
+- Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/qsiprep_outputs
+
+- Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/FMRIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
+
+
