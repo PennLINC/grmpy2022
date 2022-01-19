@@ -7,8 +7,9 @@ nav_order: 4
 ---
 
 # Data Narrative for GRMPY
+#### (based off RBC template, but modified)
 {: .no_toc }
-- (based off RBC template, but modified)
+
 
 * TOC
 {:toc}
