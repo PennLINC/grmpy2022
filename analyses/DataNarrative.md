@@ -3,7 +3,7 @@ layout: default
 title: Pipeline Documentation/Data Narrative
 has_children: false
 has_toc: false
-nav_order: 3
+nav_order: 4
 ---
 
 # Data Narrative for GRMPY
