@@ -8,7 +8,6 @@ nav_order: 5
 ---
 
 # Image Processing Pipelines
-{: .no_toc }
 
 1. Started setting up preprocessing for exemplars for processing pipelines. Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
 2. Preprocessing Pipelines 
