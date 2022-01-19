@@ -63,7 +63,6 @@ GitHub Link to curation scripts/heuristics:
 
 * GitHub Link to final CuBIDS csvs: [https://pennlinc.github.io/grmpy2022/analyses](https://pennlinc.github.io/grmpy2022/analyses)
 
-## General process
 1. Manually deleted duplicate NIFTIs on Flywheel
 2. Ran BIDS validate on all data 
 3. Uploaded data to CUBIC
@@ -175,12 +174,11 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 ##### Satisfied with results!
 
+### Pipeline Process
 
-7. Started setting up preprocessing for exemplars for processing pipelines. 
-
+7. Started setting up preprocessing for exemplars for processing pipelines. Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
 
 8. Preprocessing Pipelines 
-### Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
    ## fMRIPrep run on CUBIC by Kahini Mehta
       - First ran  pipeline on one exemplar. Then proceeded to run all the subjects at once. 
       - 231 subjects ran. Via grep checks, 230 were successful, while 1 failed (BBL 106071) due to no T1  
@@ -197,8 +195,10 @@ However, naming errors were due to ASL files which would later be replaced. Even
       - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
       - Outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
 
-9. Post Processing 
+### Post Processing
+
 * Analyses to be performed on CUBIC
+
 Did you use pennlinckit? 
    *  Not yet.
 
