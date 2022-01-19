@@ -3,7 +3,7 @@ layout: default
 title: Data Type Documentation
 has_children: false
 has_toc: false
-nav_order: 2
+nav_order: 3
 ---
 # Data Type Documentation
 
