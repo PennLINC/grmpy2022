@@ -150,7 +150,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Failed due to no ASL: 
 
-- Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
+- Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/aslprep_outputs
 
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/ASLPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/ASLPREP_AUDIT.CSV)
 
