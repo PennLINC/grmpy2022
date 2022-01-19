@@ -11,8 +11,10 @@ nav_order: 5
 
 1. Started setting up preprocessing for exemplars for processing pipelines. Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
 2. Preprocessing Pipelines 
+
 * TOC
 {:toc}
+
    ### fMRIPrep run on CUBIC by Kahini Mehta
       - First ran  pipeline on one exemplar. Then proceeded to run all the subjects at once. 
 

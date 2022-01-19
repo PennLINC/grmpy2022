@@ -70,9 +70,9 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 - Performed [twelfth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation12) run of the group. CuBIDS-apply worked well. 
 
-   Actions: Ran CuBIDS apply to remove variants wiht BOLD data under 3 minutes, and 1 DWI scan with an odd number of volumes. 
+   Actions: Ran CuBIDS apply to remove variants with BOLD data under 3 minutes, and 1 DWI scan with an odd number of volumes. 
 
-- Performed [thirteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation13) run of the group. 
+- Performed [thirteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation13) run of the group. All well.
 
    Actions: Added ASL data in (copied over to GRMPY user from Aziz by Tinashe) the BIDS directory.  
 
@@ -126,4 +126,4 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 - Performed [twenty sixth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation26) run of the group. 
 
-### Satisfied with results!
+   ### Satisfied with results!
