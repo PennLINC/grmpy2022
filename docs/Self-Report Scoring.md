@@ -3,7 +3,7 @@ layout: default
 title: Self-Report Scoring
 has_children: false
 has_toc: false
-nav_order: 3
+nav_order: 1
 ---
 # Self-Report Scoring
 
