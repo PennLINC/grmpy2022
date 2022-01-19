@@ -18,13 +18,16 @@ nav_order: 5
 {:toc}
 
 ## fMRIPrep run on CUBIC by Kahini Mehta
+- Date run: 01/05/22
+
 - Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/fmriprep-container
 
 - Container version: 20.2.3
 
 - Flags used: 
 
-```singularity run --cleanenv -B ${PWD} \
+    ```
+singularity run --cleanenv -B ${PWD} \
     pennlinc-containers/.datalad/environments/fmriprep-20-2-3/image \
     inputs/data \
     prep \
@@ -37,7 +40,8 @@ nav_order: 5
     --output-spaces MNI152NLin6Asym:res-2 \
     --participant-label "$subid" \
     --force-bbr \
-    --cifti-output 91k -v -```
+    --cifti-output 91k -v -
+    ```
 
 - First ran  pipeline on one exemplar. Then proceeded to run all the subjects at once. 
 
@@ -53,17 +57,22 @@ nav_order: 5
 
 
 
-##  XCP run on CUBIC by Kahini Mehta
+## XCP run on CUBIC by Kahini Mehta
+
+- Date run: 01/07/22
+
 - Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/xcp-abcd-container
 
 - Container version: 0.0.8 
 
 - Flags used: 
 
-```singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/xcp-abcd-0-0-8/image inputs/data/fmriprep xcp participant \
+``` 
+singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/xcp-abcd-0-0-8/image inputs/data/fmriprep xcp participant \
 --despike --lower-bpf 0.01 --upper-bpf 0.08 --participant_label $subid -p 36P -f 10 -w ${PWD}/.git/tmp/wkdir
 singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/xcp-abcd-0-0-8/image inputs/data/fmriprep xcp participant \
---despike --lower-bpf 0.01 --upper-bpf 0.08 --participant_label $subid -p 36P -f 10 -w ${PWD}/.git/tmp/wkdir --cifti```
+--despike --lower-bpf 0.01 --upper-bpf 0.08 --participant_label $subid -p 36P -f 10 -w ${PWD}/.git/tmp/wkdir --cifti 
+```
 
 - No exemplar testing
 
@@ -77,13 +86,17 @@ singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/x
 
 
 ##  QSIPrep run on CUBIC by Kahini Mehta
+
+- Date run:  01/14/22
+
 - Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/qsiprep-container
 
 - Container version: 0.14.3
 
 - Flags used: 
 
-```singularity run --cleanenv -B ${PWD} \
+  ```
+singularity run --cleanenv -B ${PWD} \
     pennlinc-containers/.datalad/environments/qsiprep-0-14-3/image \
     inputs/data \
     prep \
@@ -96,7 +109,8 @@ singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/x
     --skip-bids-validation \
     --participant-label "$subid" \
     --unringing-method mrdegibbs \
-    --output-resolution 1.5```
+    --output-resolution 1.5
+    ```
 
 - No exemplar testing.
 
