@@ -10,7 +10,7 @@ nav_order: 4
 
 - (based off RBC template, but modified)
 
-### Plan for the Data 
+## Plan for the Data 
 
 Why does PennLINC need this data?
 * Analysis of GRMPY data. 
@@ -21,7 +21,7 @@ For which project(s) is it intended? Please link to project pages below:
 
    * BIDS format
 
-### Data Acquisition
+## Data Acquisition
 
 Who is responsible for acquiring this data?
  * Acquired previously. 
@@ -33,7 +33,7 @@ Describe the data. What type of information do we have? Things to specify includ
    - Number of subjects: 231 
    - Types of images: func, perf, anat, diff, fmap
 
-### Download and Storage 
+## Download and Storage 
 
 Who is responsible for downloading this data?
 * Kahini Mehta
@@ -54,7 +54,7 @@ Is the data backed up in a second location? If so, please provide the path to th
 * CUBIC: /cbica/projects/GRMPY/project/backup
 
 
-### Curation Process
+## Curation Process
 Who is responsible for curating this data?
 * Kahini Mehta
 
@@ -174,28 +174,28 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 ##### Satisfied with results!
 
-### Pipeline Process
+## Pipeline Process
 
 7. Started setting up preprocessing for exemplars for processing pipelines. Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
 
 8. Preprocessing Pipelines 
-   ## fMRIPrep run on CUBIC by Kahini Mehta
+   ### fMRIPrep run on CUBIC by Kahini Mehta
       - First ran  pipeline on one exemplar. Then proceeded to run all the subjects at once. 
       - 231 subjects ran. Via grep checks, 230 were successful, while 1 failed (BBL 106071) due to no T1  
       - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/FMRIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/FMRIPREP_AUDIT.CSV)
       *-Outputs: /cbica/projects/GRMPY/project/curation/testing/fmriprep_outputs
 
-   ## XCP run on CUBIC by Kahini Mehta
+   ### XCP run on CUBIC by Kahini Mehta
       - Successful on all 230 subjects output by fMRIPrep, according to grep checks. Some participants re-run as jobs were inexplicably killed halfway. 
       - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV)
       - Outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
 
-   ## QSIPrep run on CUBIC by Kahini Mehta
+   ### QSIPrep run on CUBIC by Kahini Mehta
       - According to grep, 175 participants successful.  54 errors due to no DWI data, 1 error (BBL 106071) due to  no T1, and 1 participant (BBL 92211) to be re-run due to job inexplicably being killed halfway. 
       - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
       - Outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
 
-### Post Processing
+## Post Processing
 
 * Analyses to be performed on CUBIC
 
