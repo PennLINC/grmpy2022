@@ -8,10 +8,12 @@ nav_order: 5
 ---
 
 # Image Processing Pipelines
+<img src="/grmpy2022/assets/images/grmpyflowchart.png" alt="Processing Flowchart"> 
+
 {: .no_toc }
 1. Started setting up preprocessing for exemplars for processing pipelines. Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
 2. Preprocessing Pipelines 
-<img src="/grmpy2022/assets/images/grmpyflowchart.png" alt="Processing Flowchart"> 
+
 * TOC
 {:toc}
 
@@ -22,9 +24,7 @@ nav_order: 5
 
 - Flags used: 
 
-'''
-
-singularity run --cleanenv -B ${PWD} \
+```singularity run --cleanenv -B ${PWD} \
     pennlinc-containers/.datalad/environments/fmriprep-20-2-3/image \
     inputs/data \
     prep \
@@ -37,9 +37,7 @@ singularity run --cleanenv -B ${PWD} \
     --output-spaces MNI152NLin6Asym:res-2 \
     --participant-label "$subid" \
     --force-bbr \
-    --cifti-output 91k -v -
-
-'''
+    --cifti-output 91k -v -```
 
 - First ran  pipeline on one exemplar. Then proceeded to run all the subjects at once. 
 
@@ -62,14 +60,10 @@ singularity run --cleanenv -B ${PWD} \
 
 - Flags used: 
 
-'''
-
-singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/xcp-abcd-0-0-8/image inputs/data/fmriprep xcp participant \
+```singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/xcp-abcd-0-0-8/image inputs/data/fmriprep xcp participant \
 --despike --lower-bpf 0.01 --upper-bpf 0.08 --participant_label $subid -p 36P -f 10 -w ${PWD}/.git/tmp/wkdir
 singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/xcp-abcd-0-0-8/image inputs/data/fmriprep xcp participant \
---despike --lower-bpf 0.01 --upper-bpf 0.08 --participant_label $subid -p 36P -f 10 -w ${PWD}/.git/tmp/wkdir --cifti
-
-'''
+--despike --lower-bpf 0.01 --upper-bpf 0.08 --participant_label $subid -p 36P -f 10 -w ${PWD}/.git/tmp/wkdir --cifti```
 
 - No exemplar testing
 
@@ -89,9 +83,7 @@ singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/x
 
 - Flags used: 
 
-'''
-
-singularity run --cleanenv -B ${PWD} \
+```singularity run --cleanenv -B ${PWD} \
     pennlinc-containers/.datalad/environments/qsiprep-0-14-3/image \
     inputs/data \
     prep \
@@ -104,9 +96,7 @@ singularity run --cleanenv -B ${PWD} \
     --skip-bids-validation \
     --participant-label "$subid" \
     --unringing-method mrdegibbs \
-    --output-resolution 1.5
-
-'''
+    --output-resolution 1.5```
 
 - No exemplar testing.
 
