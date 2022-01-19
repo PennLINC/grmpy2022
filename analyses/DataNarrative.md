@@ -1,18 +1,16 @@
 ---
 layout: default
 title: Pipeline Documentation/Data Narrative
-has_children: false
+has_children: true
 has_toc: false
 nav_order: 4
 ---
-
-# Data Narrative for GRMPY
-#### (based off RBC template, but modified)
-{: .no_toc }
-
-
-* TOC
-{:toc}
+1. Plan for the Data
+2. Data Acquisition
+3. Download and Storage
+4. Curation Process
+5. Image Processing Pipelines
+6. Post-processing
 
 ## Plan for the Data 
 
