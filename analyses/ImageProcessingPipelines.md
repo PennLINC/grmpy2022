@@ -128,7 +128,7 @@ singularity run --cleanenv -B ${PWD} \
 
 ## ASLPrep run on CUBIC by Kahini Mehta
 
-- Date run: 01/20/22
+- Date run: 01/19/22
 
 - Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/aslprep-0-2-7-container
 
