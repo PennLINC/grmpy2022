@@ -54,7 +54,7 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 - Performed [eighth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation8) run of the group. 
 
-   Actions: Deleted ASL data (to add in the data from Aziz's ASLPrep paper) and renamed variants via CuBIDS-apply. 
+   Actions: Deleted ASL data (to add in the data from Azeez's ASLPrep paper) and renamed variants via CuBIDS-apply. 
 
 - Performed [ninth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation9) run of the group. Some errors from CuBIDS due to "use datalad" flag; renaming was not successful. 
 
@@ -74,7 +74,7 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 - Performed [thirteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation13) run of the group. All well.
 
-   Actions: Added ASL data in (copied over to GRMPY user from Aziz by Tinashe) the BIDS directory.  
+   Actions: Added ASL data in (copied over to GRMPY user from Azeez by Tinashe) the BIDS directory.  
 
 - Performed [fourteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation14 run of the group. 
 
@@ -94,7 +94,7 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 - Performed [eighteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation18) run of the group. Realised the wrong ASL data had been added in. 
 
-   Actions:  Readded correct, complete ASL (copied in from Aziz by Tinashe)and restarted process of validation for ASL. 
+   Actions:  Readded correct, complete ASL (copied in from Azeez by Tinashe)and restarted process of validation for ASL. 
 
 - Performed [nineteenth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation19) run of the group. No errors of note. Some variants to consider in Summary.csv. 
 
