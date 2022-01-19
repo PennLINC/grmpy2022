@@ -69,7 +69,7 @@ GitHub Link to curation scripts/heuristics:
 3. Uploaded data to CUBIC
 4. Used CuBIDS to add metadata and removed PHI (patient sex, acquisition datetime & weight. incorrectly removed "name" from description.json)
 5. Began to run CuBIDS validations:
-## 6. BIDS Validation
+6. BIDS Validation
 - Upon [first](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation1) run of the validator, found naming issues and description.json incorrectly formatted.
 
    Attempts to resolve: 
@@ -204,8 +204,8 @@ However, naming errors were due to ASL files which would later be replaced. Even
 7. Started setting up preprocessing for exemplars for processing pipelines. 
 
 
-## 8. Preprocessing Pipelines 
-#### Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
+8. Preprocessing Pipelines 
+## Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
    * fMRIPrep run on CUBIC by Kahini Mehta
       * First ran  pipeline on one exemplar. Then proceeded to run all the subjects at once. 
       * 231 subjects ran. Via grep checks, 230 were successful, while 1 failed (BBL 106071) due to no T1  
@@ -222,7 +222,7 @@ However, naming errors were due to ASL files which would later be replaced. Even
       * Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
       * Outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
 
-## 9. Post Processing 
+9. Post Processing 
 * Analyses to be performed on CUBIC
 Did you use pennlinckit? 
    *  Not yet.
