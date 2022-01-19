@@ -1,10 +1,3 @@
----
-layout: default
-title: Image Processing Workflow
-has_children: false
-has_toc: false
-nav_order: 5
----
 
 # Image Processing Workflow
 
