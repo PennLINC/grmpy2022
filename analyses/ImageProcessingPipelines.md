@@ -130,7 +130,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Date run: 01/20/22
 
-- Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/aslprep-container
+- Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/aslprep-0-2-7-container
 
 - Container version: 0.2.7
 
