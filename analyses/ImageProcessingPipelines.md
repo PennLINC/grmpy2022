@@ -148,6 +148,7 @@ singularity run --cleanenv -B ${PWD} \
     --skip-bids-validation \
     --output-spaces MNI152NLin6Asym:res-2 \
     --participant-label "$subid" \
+    --fs-license-file code/license.txt \
     --force-bbr -v -v 
 ```
 
