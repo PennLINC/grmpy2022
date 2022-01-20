@@ -17,7 +17,10 @@ nav_order: 5
 * TOC
 {:toc}
 
-## fMRIPrep run on CUBIC by Kahini Mehta
+## fMRIPrep 
+
+- Run on CUBIC by Kahini Mehta
+
 - Date run: 01/05/22
 
 - Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/fmriprep-container
@@ -57,7 +60,9 @@ singularity run --cleanenv -B ${PWD} \
 
 
 
-## XCP run on CUBIC by Kahini Mehta
+## XCP 
+
+- Run on CUBIC by Kahini Mehta
 
 - Date run: 01/07/22
 
@@ -85,7 +90,9 @@ singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/x
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV)
 
 
-##  QSIPrep run on CUBIC by Kahini Mehta
+##  QSIPrep 
+
+- Run on CUBIC by Kahini Mehta
 
 - Date run:  01/14/22
 
@@ -126,7 +133,9 @@ singularity run --cleanenv -B ${PWD} \
 
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
 
-## ASLPrep run on CUBIC by Kahini Mehta
+## ASLPrep 
+
+- Run on CUBIC by Kahini Mehta
 
 - Date run: 01/19/22
 
