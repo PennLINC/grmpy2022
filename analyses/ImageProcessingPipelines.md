@@ -137,7 +137,18 @@ singularity run --cleanenv -B ${PWD} \
 - Flags used: 
 
 ``` 
-
+singularity run --cleanenv -B ${PWD} \
+    pennlinc-containers/.datalad/environments/aslprep-0-2-7/image \
+    inputs/data \
+    prep \
+    participant \
+    -w ${PWD}/.git/tmp/wkdir \
+    --n_cpus $NSLOTS \
+    --stop-on-first-crash \
+    --skip-bids-validation \
+    --output-spaces MNI152NLin6Asym:res-2 \
+    --participant-label "$subid" \
+    --force-bbr -v -v 
 ```
 
 - No exemplar testing
