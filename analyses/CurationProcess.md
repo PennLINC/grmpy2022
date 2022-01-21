@@ -127,3 +127,5 @@ However, naming errors were due to ASL files which would later be replaced. Even
 - Performed [twenty sixth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation26) run of the group. 
 
 ## Satisfied with results!
+
+Note: Found sub-88773 and sub-120562 missing aslcontext.tsv files after running ASLPrep - added these in manually. 

@@ -137,7 +137,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Run on CUBIC by Kahini Mehta
 
-- Date run: 01/19/22
+- Date run: 01/20/22
 
 - Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/aslprep-0-2-7-container
 
@@ -165,14 +165,14 @@ singularity run --cleanenv -B ${PWD} \
 
 - Number of Subjects Run: 231
 
-- Finished Successfully: 
+- Finished Successfully: 213
 
-- Failed due to no T1: 1
+- Failed due to no T1: 0
 
-- Failed due to no ASL: 
+- Failed due to no/ unusuable ASL: 15
+
+- Failed due to: 1
 
 - Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/aslprep_outputs
-
-- Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/ASLPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/ASLPREP_AUDIT.CSV)
 
 
