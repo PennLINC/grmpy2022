@@ -165,13 +165,11 @@ singularity run --cleanenv -B ${PWD} \
 
 - Number of Subjects Run: 231
 
-- Finished Successfully: 213
+- Finished Successfully: 215
 
-- Failed due to no T1: 0
+- Failed due to no/ unusuable ASL: 14
 
-- Failed due to no/ unusuable ASL: 15
-
-- Failed due to: 1
+- Failed due to Obliquity: 1
 
 - Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/aslprep_outputs
 
