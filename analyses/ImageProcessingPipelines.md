@@ -19,11 +19,9 @@ nav_order: 5
 
 ## fMRIPrep 
 
-- Run on CUBIC by Kahini Mehta
+- Run on CUBIC by Kahini Mehta on 01/05/22
 
-- Date run: 01/05/22
-
-- Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/fmriprep-container
+- Path to container: /cbica/projects/GRMPY/project/curation/fmriprep-container
 
 - Container version: 20.2.3
 
@@ -54,7 +52,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Failed due to no TW1: 1
 
-- Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/fmriprep_outputs
+- Path to outputs: /cbica/projects/GRMPY/project/curation/testing/fmriprep_outputs
 
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/FMRIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/FMRIPREP_AUDIT.CSV)
 
@@ -62,11 +60,9 @@ singularity run --cleanenv -B ${PWD} \
 
 ## XCP 
 
-- Run on CUBIC by Kahini Mehta
+- Run on CUBIC by Kahini Mehta on 01/07/22
 
-- Date run: 01/07/22
-
-- Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/xcp-abcd-container
+- Path to container: /cbica/projects/GRMPY/project/curation/xcp-abcd-container
 
 - Container version: 0.0.8 
 
@@ -85,18 +81,16 @@ singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/x
 
 - Finished Successfully: 230
 
-- Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
+- Path to outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
 
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV)
 
 
 ##  QSIPrep 
 
-- Run on CUBIC by Kahini Mehta
+- Run on CUBIC by Kahini Mehta on 01/14/22
 
-- Date run:  01/14/22
-
-- Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/qsiprep-container
+- Path to container: /cbica/projects/GRMPY/project/curation/qsiprep-container
 
 - Container version: 0.14.3
 
@@ -129,17 +123,15 @@ singularity run --cleanenv -B ${PWD} \
 
 - Failed due to no DWI: 54
 
-- Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/qsiprep_outputs
+- Path to outputs: /cbica/projects/GRMPY/project/curation/testing/qsiprep_outputs
 
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
 
 ## ASLPrep 
 
-- Run on CUBIC by Kahini Mehta
+- Run on CUBIC by Kahini Mehta on 01/20/22
 
-- Date run: 01/20/22
-
-- Link to container on CUBIC: /cbica/projects/GRMPY/project/curation/aslprep-0-2-7-container
+- Path to container: /cbica/projects/GRMPY/project/curation/aslprep-0-2-7-container
 
 - Container version: 0.2.7
 
@@ -171,6 +163,8 @@ singularity run --cleanenv -B ${PWD} \
 
 - Failed due to Obliquity: 1
 
-- Link to outputs on CUBIC: /cbica/projects/GRMPY/project/curation/testing/aslprep_outputs
+- Failed due to odd number of volumes: 2
+
+- Path to outputs: /cbica/projects/GRMPY/project/curation/testing/aslprep_outputs
 
 
