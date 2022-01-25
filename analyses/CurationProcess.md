@@ -128,4 +128,4 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 ## Satisfied with results!
 
-Note: Found sub-88773 and sub-120562 missing aslcontext.tsv files after running ASLPrep - added these in manually. 
+Note: Found sub-88773 and sub-120562 missing aslcontext.tsv files after running ASLPrep - added these in manually. Also changed these subjects to have an even, rather than an odd, number of volumes. Subject 20699, unlike the other ASL data, was oblique - couldn't be used.
