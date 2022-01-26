@@ -163,8 +163,6 @@ singularity run --cleanenv -B ${PWD} \
 
 - Failed due to Obliquity: 1
 
-- Failed due to odd number of volumes: 2
-
-- Path to outputs: /cbica/projects/GRMPY/project/curation/testing/aslprep_outputs
+- Path to outputs: /cbica/projects/GRMPY/project/curation/testing/complete_aslprep_outputs
 
 
