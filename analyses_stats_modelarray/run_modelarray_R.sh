@@ -8,7 +8,8 @@ num_voxels=10   # 0 if requesting all voxels
 num_subj=215
 num_cores=4    # number of CPU cores; the more the faster
 
-fn_rstudio_singularity="/cbica/projects/GRMPY/software/rstudio_4.1.sif"
+#fn_rstudio_singularity="/cbica/projects/GRMPY/software/rstudio_4.1.sif"
+fn_rstudio_singularity="/cbica/projects/GRMPY/software/myr_r4.1.0forFixelArray.sif"
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 printf -v date '%(%Y%m%d-%H%M%S)T' -1   # $date, in YYYYmmdd-HHMMSS
