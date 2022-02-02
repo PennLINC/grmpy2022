@@ -170,7 +170,7 @@ Ran GroupQC (see: grmpy2022/analyses/ASLPREP_GROUP_QC.csv)
 Three groups of grmpy ASL data:
 1. The first group (dominant group) needed to be scaled by 10 
 2. The second group (few) was alright
-3. The third group (very few) had negative CBF, which means their aslcontext is different from the other group and the order of label-control needs to be reversed.
+3. The third group (only 1) had negative CBF, which means their aslcontext is different from the other group and the order of label-control needs to be reversed.
 
 Re-ran ASLPrep: 
 
