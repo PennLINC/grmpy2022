@@ -14,6 +14,6 @@ Why does PennLINC need this data?
 
 For which project(s) is it intended? Please link to project pages below:
 * [GRMPY](https://pennlinc.github.io/grmpy2022/)
-* What is our goal data format?
 
-   * BIDS format
+What is our goal data format?
+* BIDS format
