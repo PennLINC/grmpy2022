@@ -131,7 +131,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Three groups of grmpy ASL data based on GroupQC (see: [ASLPREP_GROUP_QC.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_GROUP_QC.csv)):
 
-1. The first group (dominant group; indicated as 1 in "Group" column in [this csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_Groups.csv)) needed to be scaled by 10. Their GMmeanCBF was in the order of 400-600 rather than 40-60 before scaling; needed to add the flag --m0_scale 10.
+1. The first group (dominant group; indicated as 1 in "Group" column in [this csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASL_Groups.csv)) needed to be scaled by 10. Their GMmeanCBF was in the order of 400-600 rather than 40-60 before scaling; needed to add the flag --m0_scale 10.
 2. The second group (few; indicated as 2 in the "Group" column in the CSV) was alright.
 3. The third group (only 1; indicated as 3 in the CSV) had negative GMmeanCBF, which means its aslcontext is different from the other group and the order of label-control needs to be reversed. However, even when reversed, it was in the order of 400-600 and so needed to be re-run with the same flag as in group 1. 
 
