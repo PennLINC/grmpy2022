@@ -128,7 +128,7 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 ## Satisfied with results!
 
-Notes:
+Notes about ASLPrep:
 
 1. Found sub-88773 and sub-120562 missing aslcontext.tsv files after running ASLPrep - added these in manually. Also changed these subjects to have an even, rather than an odd, number of volumes. 
 

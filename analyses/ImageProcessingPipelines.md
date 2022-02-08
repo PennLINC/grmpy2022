@@ -10,6 +10,8 @@ nav_order: 5
 # Image Processing Pipelines
 <img src="/grmpy2022/assets/images/grmpyflowchart.png" alt="Processing Flowchart"> 
 
+### Note: refer to [Curation Process](https://pennlinc.github.io/grmpy2022/analyses/CurationProcess/) for information about excluded scans in ASLPrep
+
 {: .no_toc }
 1. Started setting up preprocessing for exemplars for processing pipelines. Path to exemplar dataset: /cbica/projects/GRMPY/project/curation/testing/exemplars_dir (datalad tracked)
 2. Preprocessing Pipelines 
