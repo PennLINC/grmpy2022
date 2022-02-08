@@ -128,6 +128,12 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 ## Satisfied with results!
 
-Note: Found sub-88773 and sub-120562 missing aslcontext.tsv files after running ASLPrep - added these in manually. Also changed these subjects to have an even, rather than an odd, number of volumes. Subject 20699, unlike the other ASL data, was oblique - couldn't be used, but its perf directory remains. Further, sub-20809 had a VoxelDimSize3 of 7.5 for ASL- this was an error where it should have been 3.75, but dicom2niix was working oddly on some subjects such that it populated the z direction twice. sub-20809 also had 22.5 in direction z for their m0 scan. Eventually decided to exclude this participant, not run them through ASLPrep and deleted their perf directory. 
+Notes:
+
+1. Found sub-88773 and sub-120562 missing aslcontext.tsv files after running ASLPrep - added these in manually. Also changed these subjects to have an even, rather than an odd, number of volumes. 
+
+2. Sub-20699, unlike the other ASL data, was oblique - couldn't be used, but its perf directory remains. It also has 7.5 in direction z of its m0 scan. 
+
+3. Further, sub-20809 had a VoxelDimSize3 of 7.5 for ASL- this was an error where it should have been 3.75, but dicom2niix was working oddly on some subjects such that it populated the z direction twice. Sub-20809 also had 22.5 in direction z for their m0 scan. Eventually decided to exclude this participant, not run them through ASLPrep and deleted their perf directory. 
 
 - Ran [twenty seventh](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation27) run of the group- grouping only. 
