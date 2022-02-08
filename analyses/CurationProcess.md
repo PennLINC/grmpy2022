@@ -122,7 +122,7 @@ However, naming errors were due to ASL files which would later be replaced. Even
 
 - Performed [twenty fifth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation25) run of the group. Realized we could not rename ASL variants due to CuBIDS/BIDS issues, as the m0 scan names had to match the ASL scans, but both would not necessarily have their variant renamings corresponding/matched. 
 
-   Actions:  Revereted back to how things were at Validation22. Proceeded to run CuBIDS-apply, not renaming any ASL variants, but simply purging ASL scans with numvol less than 60. 
+   Actions:  Revereted back to how things were at Validation22. Proceeded to run CuBIDS-apply, not renaming any ASL variants, but simply purging ASL scans with numvol less than 60 (2 scans). 
 
 - Performed [twenty sixth](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation26) run of the group. 
 
