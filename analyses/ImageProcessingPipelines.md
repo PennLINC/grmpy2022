@@ -175,8 +175,7 @@ singularity run --cleanenv -B ${PWD} \
     --output-spaces MNI152NLin6Asym:res-2 \
     --participant-label "$subid" \
     --fs-license-file code/license.txt \
-    --force-bbr -v -v 
-    --m0_scale 10
+    --force-bbr --m0_scale 10 -v -v 
 ```
 - No exemplar testing
 
