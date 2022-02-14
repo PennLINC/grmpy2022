@@ -137,3 +137,6 @@ Notes about ASLPrep:
 3. Further, sub-20809 had a VoxelDimSize3 of 7.5 for ASL- this was an error where it should have been 3.75, but dicom2niix was working oddly on some subjects such that it populated the z direction twice. Sub-20809 also had 22.5 in direction z for their m0 scan. Eventually decided to exclude this participant, not run them through ASLPrep and deleted their perf directory. 
 
 - Ran [twenty seventh](https://github.com/PennLINC/grmpy2022/tree/master/analyses/Validation27) run of the group- grouping only. 
+
+Notes about ASL data: 
+1. Sub 20120 had two sessions, as mentioned before, ses-10939 was removed - however, this session is also the only one with usable ASL data. The sessions will be merged, with the ASL coregistered to the T1 from the second session, since all other scans from ses-10939 are unusable. 
