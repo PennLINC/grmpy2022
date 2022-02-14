@@ -189,6 +189,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Path to outputs: /cbica/projects/GRMPY/project/curation/testing/complete_aslprep_outputs
 
+Further notes about ASLPrep:
 
-
+1. Sub 20120 had two sessions, as mentioned before, ses-10939 was removed - however, this session is also the only one with usable ASL data. The sessions will be merged, with the ASL coregistered to the T1 from the second session, since all other scans from ses-10939 are unusable. 
 
