@@ -130,7 +130,7 @@ singularity run --cleanenv -B ${PWD} \
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
 
 ## ASLPrep 
-- Latest QC: GroupQC (see: [ASLPREP_GROUP_QC_LATES.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_GROUP_QC_LATEST.csv))
+- Latest QC: GroupQC (see: [ASLPREP_GROUP_QC_LATEST.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_GROUP_QC_LATEST.csv))
 
 - Three groups of grmpy ASL data based on older GroupQC (see: [ASLPREP_GROUP_QC.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_GROUP_QC.csv)):
 
