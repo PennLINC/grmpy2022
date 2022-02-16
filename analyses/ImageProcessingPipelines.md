@@ -130,8 +130,9 @@ singularity run --cleanenv -B ${PWD} \
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
 
 ## ASLPrep 
+- Latest QC: GroupQC (see: [ASLPREP_GROUP_QC_LATES.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_GROUP_QC_LATEST.csv))
 
-- Three groups of grmpy ASL data based on GroupQC (see: [ASLPREP_GROUP_QC.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_GROUP_QC.csv)):
+- Three groups of grmpy ASL data based on older GroupQC (see: [ASLPREP_GROUP_QC.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_GROUP_QC.csv)):
 
 1. The first group (dominant group; indicated as 1 in "Group" column in [this csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASL_Groups.csv)) needed to be scaled by 10. Their GMmeanCBF was in the order of 400-600 rather than 40-60 before scaling; needed to add the flag --m0_scale 10.
 2. The second group (few; indicated as 2 in the "Group" column in the CSV) was alright.
