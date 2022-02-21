@@ -9,9 +9,9 @@ import os
 import sys
 
 csv_dir = sys.argv[1]
-#1 *rest*singleband*fsLR_desc-qc_bold.csv
+#2 *rest*multiband*fsLR_desc-qc_bold.csv
 cntr = 0
-for csv_path in Path(csv_dir).rglob('sub-*rest*singleband*fsLR_desc-qc_bold.csv'):
+for csv_path in Path(csv_dir).rglob('sub-*rest*multiband*fsLR_desc-qc_bold.csv'):
     cntr += 1
     sub_df = pd.read_csv(str(csv_path))
     columns = list(sub_df.columns)
@@ -21,7 +21,7 @@ for csv_path in Path(csv_dir).rglob('sub-*rest*singleband*fsLR_desc-qc_bold.csv'
 df = pd.DataFrame(np.nan, index=range(0,1), columns=columns, dtype="string")
 print(df.columns)
 
-for csv_path in Path(csv_dir).rglob('sub-*rest*singleband*fsLR_desc-qc_bold.csv'):
+for csv_path in Path(csv_dir).rglob('sub-*rest*multiband*fsLR_desc-qc_bold.csv'):
     sub_df = pd.read_csv(str(csv_path))
     df = pd.concat([df, sub_df])
 df.dropna(how='all',inplace=True)

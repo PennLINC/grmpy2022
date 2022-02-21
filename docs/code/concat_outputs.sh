@@ -9,7 +9,8 @@ cd concat_ds/code
 wget https://raw.githubusercontent.com/PennLINC/grmpy2022/master/docs/code/concatenator.py
 cd ..
 datalad save -m "added concatenator script"
-datalad run -i 'sub-*rest*singleband*fsLR_desc-qc_bold.csv' -o '${PROJECT_ROOT}/XCP_sub-*rest*singleband*fsLR_desc-qc_bold.csv_QC.csv' --expand inputs --explicit "python code/concatenator.py  ${PROJECT_ROOT}/XCP_sub-*rest*singleband*fsLR_desc-qc_bold.csv_QC.csv"
+datalad run -i '/cbica/projects/GRMPY/project/curation/testing/concat_ds' -o '${PROJECT_ROOT}/XCP_sub-restmultifsLR_desc-qc_boldQC.csv' --expand inputs --explicit "python code/concatenator.py  /cbica/projects/GRMPY/project/curation/testing/concat_ds /cbica/projects/GRMPY/project/curation/testing/xcp_outputs/XCP/XCP_sub-restmultibandfsLR_desc-qc_boldQC.csv
+"
 datalad save -m "generated report"
 # push changes
 datalad push
