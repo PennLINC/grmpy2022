@@ -85,7 +85,7 @@ singularity run --cleanenv -B ${PWD} pennlinc-containers/.datalad/environments/x
 
 - Path to outputs: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs
 
-- Path to QC csvs by task/space: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs/XCP_QCs
+- Path to [QC csvs](https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_QC) by task/space: /cbica/projects/GRMPY/project/curation/testing/xcp_outputs/XCP_QCs
 
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/XCP_AUDIT.CSV)
 
