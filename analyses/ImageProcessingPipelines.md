@@ -186,9 +186,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Finished Successfully: 214
 
-- Failed due to no/ unusuable ASL: 15
-
-- Failed due to Obliquity: 1 (sub-20699)
+- Failed due to no/ unusuable ASL: 17
 
 - Path to outputs: /cbica/projects/GRMPY/project/curation/testing/aslprep_outputs
 
