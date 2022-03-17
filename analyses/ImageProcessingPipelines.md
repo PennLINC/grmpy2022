@@ -132,7 +132,7 @@ singularity run --cleanenv -B ${PWD} \
 - Link to audit: [https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV](https://github.com/PennLINC/grmpy2022/tree/master/analyses/QSIPREP_AUDIT.CSV)
 
 ## ASLPrep 
-- Latest QC: GroupQC (see: [ASLPREP_GROUP_QC_LATEST.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_GROUP_QC_LATEST.csv))
+- Latest QC: GroupQC (see: [.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/csv))
 
 - Three groups of grmpy ASL data based on older GroupQC (see: [ASLPREP_GROUP_QC.csv](https://github.com/PennLINC/grmpy2022/blob/master/analyses/ASLPREP_GROUP_QC.csv)):
 
@@ -142,7 +142,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Run on CUBIC by Kahini Mehta on 
 
-- Path to container: /cbica/projects/GRMPY/project/curation/aslprep-0-2-7-container
+- Path to container: /cbica/projects/GRMPY/project/curation/aslprep-container
 
 - Container version: 0.2.7
 
@@ -190,7 +190,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Failed due to Obliquity: 1 (sub-20699)
 
-- Path to outputs: /cbica/projects/GRMPY/project/curation/testing/complete_aslprep_outputs
+- Path to outputs: /cbica/projects/GRMPY/project/curation/testing/aslprep_outputs
 
 Further notes about ASLPrep:
 
