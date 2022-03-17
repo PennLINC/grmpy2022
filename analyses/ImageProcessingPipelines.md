@@ -184,7 +184,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Number of Subjects Run: 231
 
-- Finished Successfully: 215
+- Finished Successfully: 214
 
 - Failed due to no/ unusuable ASL: 15
 
