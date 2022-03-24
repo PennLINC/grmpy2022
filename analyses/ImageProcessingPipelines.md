@@ -142,7 +142,7 @@ singularity run --cleanenv -B ${PWD} \
 
 - Run on CUBIC by Kahini Mehta on 
 
-- Path to container: /cbica/projects/GRMPY/project/curation/aslprep-container
+- Path to container: /cbica/projects/GRMPY/project/curation/aslprep-unstable-container
 
 - Container version: 0.2.7
 
@@ -150,7 +150,7 @@ singularity run --cleanenv -B ${PWD} \
 
 ``` 
 singularity run --cleanenv -B ${PWD} \
-    pennlinc-containers/.datalad/environments/aslprep-0-2-7/image \
+    pennlinc-containers/.datalad/environments/aslprep-unstable/image \
     inputs/data \
     prep \
     participant \
@@ -167,7 +167,7 @@ singularity run --cleanenv -B ${PWD} \
 
 ``` 
 singularity run --cleanenv -B ${PWD} \
-    pennlinc-containers/.datalad/environments/aslprep-0-2-7/image \
+    pennlinc-containers/.datalad/environments/aslprep-unstable/image \
     inputs/data \
     prep \
     participant \
