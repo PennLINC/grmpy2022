@@ -157,6 +157,8 @@ singularity run --cleanenv -B ${PWD} \
     -w ${PWD}/.git/tmp/wkdir \
     --n_cpus $NSLOTS \
     --stop-on-first-crash \
+    --scorescrub \
+    --basil \
     --skip-bids-validation \
     --output-spaces MNI152NLin6Asym:res-2 \
     --participant-label "$subid" \
@@ -174,6 +176,8 @@ singularity run --cleanenv -B ${PWD} \
     -w ${PWD}/.git/tmp/wkdir \
     --n_cpus $NSLOTS \
     --stop-on-first-crash \
+    --scorescrub \
+    --basil \
     --skip-bids-validation \
     --output-spaces MNI152NLin6Asym:res-2 \
     --participant-label "$subid" \
