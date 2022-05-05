@@ -8,7 +8,7 @@ if(length(new.packages)) install.packages(new.packages)
 
 library(devtools)
 # install ModelArray:
-branch_name_modelarray <- "enh/voxels"    # +++++++++++++++ TODO: change this after merging the branch into main!!!
+branch_name_modelarray <- "enh/subj_specific_masks"    # +++++++++++++++ TODO: change this after merging the branch into main!!!
 devtools::install_github("PennLINC/ModelArray", ref = branch_name_modelarray,
                          upgrade = "never") # not to upgrade package dependencies
 library(ModelArray)
@@ -36,13 +36,13 @@ analysis_name <- "lm_fullOutputs"    # the name for the statistical results data
 
 
 fn.h5.orig <- file.path(folder.main, 
-                        paste0("GRMPY_meanCBF_n",toString(nsubj),"_orig.h5"))
+                        paste0("GRMPY_meanCBF_n",toString(nsubj),"_indmask_orig.h5"))
 # fn.h5.output <- file.path(folder.main, 
 #                         paste0("GRMPY_meanCBF_n",toString(nsubj),".h5"))
 fn.h5.output <- file.path(folder.main,
                           paste0(filename_output_body,".h5"))
 fn.csv <- file.path(folder.main,
-                    paste0("GRMPY_convoxel_meanCBF_n",toString(nsubj),".csv"))
+                    paste0("GRMPY_convoxel_meanCBF_n",toString(nsubj),"_indmask.csv"))
 
 # sanity check:
 if (file.exists(fn.h5.orig) == FALSE) {
@@ -71,7 +71,7 @@ modelarray <- ModelArray(fn.h5.output, scalar_types = c("CBF"))
 
 # list of voxels to run:
 if (num.voxels == 0) {  # requesting all
-  element.subj <- NULL
+  element.subset <- NULL
   num.voxels <- numElementsTotal(modelarray = modelarray, scalar_name="CBF")  # total number of voxels
 } else {
   element.subset <- 1:num.voxels
