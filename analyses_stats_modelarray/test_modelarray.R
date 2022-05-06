@@ -10,7 +10,8 @@ library(devtools)
 # install ModelArray:
 branch_name_modelarray <- "enh/subj_specific_masks"    # +++++++++++++++ TODO: change this after merging the branch into main!!!
 devtools::install_github("PennLINC/ModelArray", ref = branch_name_modelarray,
-                         upgrade = "never") # not to upgrade package dependencies
+                         upgrade = "never",  # not to upgrade package dependencies
+                         force = TRUE)     # force to install or not
 library(ModelArray)
 
 ### inputs #####
@@ -29,9 +30,11 @@ message(paste0("main folder = ", folder.main))
 message(paste0("output .h5 filename = ", filename_output_body, ".h5"))
 
 # +++++++++++++++++++ CHANGE THESE INPUTS IF NEEDED: ++++++++++++++++++++++++++++++++++
-formula <- CBF ~ age + sex
+#formula <- CBF ~ age + sex
+formula <- CBF ~ s(age) + sex
 full.outputs <- TRUE
-analysis_name <- "lm_fullOutputs"    # the name for the statistical results dataframe to be saved into .h5 file
+#analysis_name <- "lm_fullOutputs"    # the name for the statistical results dataframe to be saved into .h5 file
+analysis_name <- "gam_fullOutputs"
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -79,16 +82,23 @@ if (num.voxels == 0) {  # requesting all
 
 
 ### run ModelArray ######
-mylm <- ModelArray.lm(formula, data = modelarray, phenotypes = phenotypes, scalar = "CBF",
-                      element.subset = element.subset, full.outputs = full.outputs,
-                      correct.p.value.terms = "fdr", 
-                      correct.p.value.model = "fdr",
-                      pbar = TRUE, n_cores = num.cores)
+# mylm <- ModelArray.lm(formula, data = modelarray, phenotypes = phenotypes, scalar = "CBF",
+#                       element.subset = element.subset, full.outputs = full.outputs,
+#                       correct.p.value.terms = "fdr",
+#                       correct.p.value.model = "fdr",
+#                       pbar = TRUE, n_cores = num.cores)
+# message("statistical results:")
+# head(mylm)
+
+mygam <- ModelArray.gam(formula, data = modelarray, phenotypes = phenotypes, scalar="CBF",
+                        element.subset = element.subset, full.outputs = full.outputs,
+                        pbar = TRUE, n_cores = num.cores)
 message("statistical results:")
-head(mylm)
+head(mygam)
 
 ### save results #####
-writeResults(fn.h5.output, mylm, analysis_name = analysis_name, overwrite = TRUE)
+#writeResults(fn.h5.output, mylm, analysis_name = analysis_name, overwrite = TRUE)
+writeResults(fn.h5.output, mygam, analysis_name = analysis_name, overwrite = TRUE)
 
 # if you want to view the saved results in .h5:
 rhdf5::h5ls(fn.h5.output)
