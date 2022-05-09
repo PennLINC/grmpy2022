@@ -29,7 +29,11 @@ nav_order: 6
    ```
 
    5. Converted from .h5 to results folder named after date, containing all niftis, again using Confixel. 
-   6.  No significance found for clinical scales: including fdr_correction images, cluster correction via `easythresh` and viewing via `mricron`. Confirmed by vector testing in R: 
+   6.  No significance found for clinical scales: including fdr_correction images, cluster correction via `easythresh` and viewing via `mricron`. 
+   
+   Results directories are pointed to in the file `ReadMeResultFolderDescriptions.md` in the `stats_ModelArray` directory.
+   
+   Results further confirmed by vector testing in R: 
    
    ```
    GM (GMmeanCBF from ASLPREP_QC.csv) ~ age + sex + basilQEI + rmsd + als_score/bdi_score/scared_score_total/ari_score
