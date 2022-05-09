@@ -14,7 +14,11 @@ nav_order: 6
    1.  Followed documentation from [Model Array demo](https://github.com/PennLINC/ModelArray_tests/blob/main/demo_volume_data/pncNback_readme.md) and [quick start guide](https://pennlinc.github.io/ModelArray/articles/ModelArray_basics.html) 
    2. Used [Confixel](https://github.com/PennLINC/ConFixel) for conversion from .nii to .h5;  final convoxel .csv available at `cbica/projects/GRMPY/project/curation/testing/stats_ModelArray/GRMPY_convoxel_meanCBF_n209_finalversion.csv`
    3. Ran `qsub_call.sh`, which called `runRscript.sh` which called the actual `RScript.R`. This used the singularity image `cbica/projects/GRMPY/project/curation/testing/stats_ModelArray/modelarray.sif`
-   4. R script used the formula `CBF ~ age (negligible non-linear effects) + sex + basilQEI + rmsd + als_score/bdi_score/scared_score_total/ari_score` and function as below: 
+   4. R script used the formula 
+   ```
+   CBF ~ age (negligible non-linear effects) + sex + basilQEI + rmsd + als_score/bdi_score/scared_score_total/ari_score
+   ``` 
+   and function as below: 
    
    ```
    mylm <- ModelArray.lm(formula, data = modelarray, phenotypes = phenotypes, scalar = "CBF",
@@ -22,13 +26,14 @@ nav_order: 6
                      correct.p.value.terms = c("fdr", "bonferroni"),
                      correct.p.value.model = c("fdr", "bonferroni"),
                      pbar = TRUE, n_cores = num.cores) #n_cores = 4, element.subset = all voxels, full.outputs = TRUE
-
-
    ```
 
    5. Converted from .h5 to results folder named after date, containing all niftis, again using Confixel. 
-   6.  No significance found for clinical scales: including fdr_correction images, cluster correction via `easythresh` and viewing via `mricron`. Confirmed by vector testing in R: `GM (GMmeanCBF from ASLPREP_QC.csv) ~ age + sex + basilQEI + rmsd + als_score/bdi_score/scared_score_total/ari_score`
+   6.  No significance found for clinical scales: including fdr_correction images, cluster correction via `easythresh` and viewing via `mricron`. Confirmed by vector testing in R: 
+   
+   ```
+   GM (GMmeanCBF from ASLPREP_QC.csv) ~ age + sex + basilQEI + rmsd + als_score/bdi_score/scared_score_total/ari_score
+   ```
 
 
-Did you use pennlinckit? 
-   *  Not yet.
+* Did you use pennlinckit?  Not yet.
